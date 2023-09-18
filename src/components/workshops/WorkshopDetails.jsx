@@ -20,7 +20,7 @@ const WorkshopDetails = ({id, img, title, date, content}) => {
         to={'/contact'}
         className='flex flex-row items-center text-sm font-mono font-bold text-green-700 hover:text-green-500'
       >
-        <span className=''>Reserve a spot</span>{' '}
+        Reserve a spot
         <MdOutlineArrowRightAlt size={25} />{' '}
       </Link>
       </div>
