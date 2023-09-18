@@ -5,6 +5,7 @@ import {FaCcVisa} from 'react-icons/fa'
 import {HiCash} from 'react-icons/hi'
 import { logo } from '../../assets'
 import FooterOverlay from './FooterOverlay'
+import { Link } from 'react-router-dom'
 
 const Footer = () => (
   <section>
@@ -61,48 +62,47 @@ const Footer = () => (
             <p className='font-extrabold capitalize text-sm lg:text-base'>
               Help
             </p>
-            <a
-              href='contact'
+            <Link to={'/contact'}
+          
               className='text-xs font-serif pt-1 hover:text-green-500 duration-500 '
             >
               Contact Us
-            </a>
-            <a
-              href='contact'
+            </Link>
+            <Link
+              to={'/contact'}
               className='text-xs font-serif hover:text-green-500 duration-500 '
             >
               Returns & Refunds
-            </a>
-            <a
-              href='contact'
+            </Link>
+            <Link
+              to={'/contact'}
               className='text-xs font-serif hover:text-green-500 duration-500 '
             >
               Track your order
-            </a>
+            </Link>
           </div>
 
           <div className='flex flex-col'>
             <p className='font-extrabold capitalize text-sm lg:text-base'>
               Information
             </p>
-            <a
-              href='contact'
+            <Link
+              to={'/contact'}
               className='text-xs font-serif pt-1 hover:text-green-500 duration-500 '
             >
               About Us
-            </a>
-            <a
-              href='contact'
+            </Link>
+            <Link
+              to={'/contact'}
               className='text-xs font-serif hover:text-green-500 duration-500 '
             >
               Terms & Conditions
-            </a>
-            <a
-              href='contact'
+            </Link>
+            <Link to={'/contact'}    
               className='text-xs font-serif hover:text-green-500 duration-500 '
             >
               Privacy & Cookies
-            </a>
+            </Link>
           </div>
 
           <div className='flex flex-col'>
