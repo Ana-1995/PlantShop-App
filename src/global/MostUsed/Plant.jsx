@@ -29,7 +29,7 @@ const Plant = ({id, img, title, price, ExPrice, stars }) => {
 
         <button
           onClick={handleAddToCart}
-          className='font-serif absolute cursor-pointer opacity-0 group-hover:opacity-100 text-center ease-in duration-[.3s] transition bottom-0 text-white bg-green-800 w-full font-light text-md lg:text-lg py-1'
+          className='font-serif absolute cursor-pointer opacity-0 group-hover:opacity-100 text-center ease-in duration-[.3s] transition bottom-0 text-white bg-green-800 w-full font-light text-md lg:text-lg py-1 tracking-wider'
         >
           Add To Cart
         </button>

@@ -171,13 +171,13 @@ if (isLoading) {
             ))}
           </div>
 
-          <div className='w-[1px] h-[350px] bg-neutral-500 hidden lg:flex mr-10' />
+          <div className='w-[1px] h-[350px] bg-neutral-500 hidden lg:flex ' />
         </div>
 
         <div
           className={`${
             resetAnimation ? 'slide-in-right' : ''
-          }  flex flex-row flex-wrap justify-center lg:justify-evenly gap-y-5 lg:gap-y-16 flex-1`}
+          }  flex flex-row flex-wrap justify-center lg:justify-evenly gap-y-5  flex-1`}
         >
           {filteredPlants.map((plant, i) => (
             <Plant

@@ -58,7 +58,7 @@ const Indoor = () => {
   return (
     <>
       <CentralTitle title={'Indoor Plants'} />
-      <div className='flex flex-row w-[90%] m-auto justify-between 2xl:justify-between items-center'>
+      <div className='flex flex-row w-[90%] m-auto justify-between items-center'>
         <div className='flex flex-row w-full m-auto lg:m-0 lg:w-fit pb-4 lg:pb-6 justify-center items-center'>
           <button
             className='font-sans text-md pl-0 lg:pl-1 text-slate-500 font-semibold bg-green-200 py-1 px-2 rounded-md tracking-wider'
@@ -67,7 +67,7 @@ const Indoor = () => {
             All Indoor Plants
           </button>
         </div>
-        <div className='hidden lg:flex flex-row justify-center items-center px-2 py-2 rounded-md mr-0 2xl:mr-9  bg-green-200'>
+        <div className='hidden lg:flex flex-row justify-center items-center px-2 py-2 rounded-md mr-0 2xl:mr-12 bg-green-200'>
           <input
             className='border-none outline-none text-sm bg-transparent text-slate-600'
             type='text'
@@ -144,7 +144,7 @@ const Indoor = () => {
         <div
           className={`${
             resetAnimation ? 'slide-in-right' : ''
-          } flex flex-row flex-wrap justify-center lg:justify-start gap-8 flex-1`}
+          } flex flex-row flex-wrap justify-center lg:justify-start gap-x-3 gap-y-4 flex-1`}
         >
           {filteredPlants.map((plant, i) => (
             <Plant

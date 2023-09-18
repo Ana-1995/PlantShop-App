@@ -63,7 +63,7 @@ const Outdoor = () => {
             All Outdoor Plants
           </button>
         </div>
-        <div className='hidden lg:flex flex-row justify-center items-center px-2 py-2 rounded-md mr-0 2xl:mr-9  bg-green-200'>
+        <div className='hidden lg:flex flex-row justify-center items-center px-2 py-2 rounded-md mr-0 2xl:mr-12 bg-green-200'>
           <input
             className='border-none outline-none text-sm bg-transparent text-slate-600'
             type='text'
@@ -140,7 +140,7 @@ const Outdoor = () => {
         <div
           className={`${
             resetAnimation ? 'slide-in-right' : ''
-          } flex flex-row flex-wrap justify-center lg:justify-start gap-8 flex-1`}
+          } flex flex-row flex-wrap justify-center lg:justify-start gap-x-3 gap-y-4 flex-1`}
         >
           {filteredPlants.map((plant, i) => (
             <Plant
