@@ -28,6 +28,7 @@ const Video = ({ disableFullscreen }) => {
           loop
           controls={!disableFullscreen}
           muted
+          playsInline
         />
         <div className='flex justify-center items-center absolute inset-0 '>
           <div
