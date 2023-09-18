@@ -1,5 +1,6 @@
 import React from 'react'
 import { MdOutlineArrowRightAlt } from 'react-icons/md'
+import { Link } from 'react-router-dom'
 
 const WorkshopDetails = ({id, img, title, date, content}) => {
   return (
@@ -15,13 +16,13 @@ const WorkshopDetails = ({id, img, title, date, content}) => {
       <div className="px-3">
       <p>{content}</p>
 
-      <a
-        href='contact'
+      <Link
+        to={'/contact'}
         className='flex flex-row items-center text-sm font-mono font-bold text-green-700 hover:text-green-500'
       >
         <span className=''>Reserve a spot</span>{' '}
         <MdOutlineArrowRightAlt size={25} />{' '}
-      </a>
+      </Link>
       </div>
     </div>
   )
