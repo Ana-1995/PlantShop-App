@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
@@ -6,26 +5,42 @@ import { plantsData } from '../../constants/data'
 import { CentralTitle, Plant } from '../../global'
 
 const Discounted = () => {
- const scrollRef = useRef(null)
- const [scrollDistance, setScrollDistance] = useState(0)
+  const scrollRef = useRef(null)
+  const [scrollDistance, setScrollDistance] = useState(0)
+  const [touchStartX, setTouchStartX] = useState(0)
 
- useEffect(() => {
-   const container = scrollRef.current
-   const containerWidth = container.clientWidth
-   const scrollStep = containerWidth / 2 
+  useEffect(() => {
+    const container = scrollRef.current
+    const containerWidth = container.clientWidth
+    const scrollStep = containerWidth / 2
 
-   setScrollDistance(scrollStep)
- }, [])
+    setScrollDistance(scrollStep)
+  }, [])
 
- const scroll = (direction) => {
-   const { current } = scrollRef
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX)
+  }
 
-   if (direction === 'left') {
-     current.scrollLeft -= scrollDistance
-   } else {
-     current.scrollLeft += scrollDistance
-   }
- }
+  const handleTouchMove = (e) => {
+    const touchEndX = e.touches[0].clientX
+    const deltaX = touchEndX - touchStartX
+
+    if (deltaX > 50) {
+      scroll('left')
+    } else if (deltaX < -50) {
+      scroll('right')
+    }
+  }
+
+  const scroll = (direction) => {
+    const { current } = scrollRef
+
+    if (direction === 'left') {
+      current.scrollLeft -= scrollDistance
+    } else {
+      current.scrollLeft += scrollDistance
+    }
+  }
 
   const discountedPlants = plantsData.filter((plant) => {
     return plant.position === 'discounted'
@@ -39,6 +54,8 @@ const Discounted = () => {
           <div
             className='flex flex-row w-max overflow-x-scroll truncate'
             ref={scrollRef}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
           >
             {discountedPlants.map((plant) => (
               <Plant
@@ -70,4 +87,3 @@ const Discounted = () => {
 }
 
 export default Discounted
-

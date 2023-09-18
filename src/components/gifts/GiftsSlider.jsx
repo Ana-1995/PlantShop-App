@@ -8,10 +8,26 @@ import { Link } from 'react-router-dom'
 const GiftsSlider = () => {
   //animation
   const [resetAnimation, setResetAnimation] = useState(false)
+    const [touchStartX, setTouchStartX] = useState(0)
   useEffect(() => {
     setResetAnimation(false) // Reset animation
     setTimeout(() => setResetAnimation(true), 0) 
   }, [])
+
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX)
+  }
+
+  const handleTouchMove = (e) => {
+    const touchEndX = e.touches[0].clientX
+    const deltaX = touchEndX - touchStartX
+
+    if (deltaX > 50) {
+      scroll('left')
+    } else if (deltaX < -50) {
+      scroll('right')
+    }
+  }
   const scrollRef = useRef(null)
 
   const scroll = (direction) => {
@@ -45,6 +61,8 @@ const GiftsSlider = () => {
           <div
             className='flex flex-row w-screen overflow-x-scroll overflow-hidden truncate'
             ref={scrollRef}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
           >
             {giftsProductsData.map((plant, i) => (
               <Plant

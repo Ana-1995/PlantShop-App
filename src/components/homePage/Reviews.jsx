@@ -8,6 +8,7 @@ import ReviewsSlider from './ReviewsSlider'
 const Reviews = () => {
   const scrollRef = useRef(null)
   const [scrollDistance, setScrollDistance] = useState(0)
+    const [touchStartX, setTouchStartX] = useState(0)
 
   useEffect(() => {
     const container = scrollRef.current
@@ -16,6 +17,22 @@ const Reviews = () => {
 
     setScrollDistance(scrollStep)
   }, [])
+
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX)
+  }
+
+  const handleTouchMove = (e) => {
+    const touchEndX = e.touches[0].clientX
+    const deltaX = touchEndX - touchStartX
+
+    if (deltaX > 50) {
+      scroll('left')
+    } else if (deltaX < -50) {
+      scroll('right')
+    }
+  }
+
 
   const scroll = (direction) => {
     const { current } = scrollRef
@@ -33,11 +50,12 @@ const Reviews = () => {
         Welcome to our plant family
       </h4>
 
-    
       <div className='flex flex-row gap-2 w-[80%] m-auto'>
         <div
           className='flex flex-row pb-5 gap-5 lg:gap-16 justify-between w-max overflow-x-scroll truncate whitespace-normal'
           ref={scrollRef}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
         >
           {ReviewsData.map((item) => (
             <ReviewsSlider

@@ -8,15 +8,29 @@ import { CentralTitle, Plant } from '../../global'
 const BestSellers = () => {
   const scrollRef = useRef(null)
   const [scrollDistance, setScrollDistance] = useState(0)
-
+ const [touchStartX, setTouchStartX] = useState(0)
   useEffect(() => {
     const container = scrollRef.current
     const containerWidth = container.clientWidth
     const scrollStep = containerWidth / 2 
+ 
 
     setScrollDistance(scrollStep)
   }, [])
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX)
+  }
 
+  const handleTouchMove = (e) => {
+    const touchEndX = e.touches[0].clientX
+    const deltaX = touchEndX - touchStartX
+
+    if (deltaX > 50) {
+      scroll('left')
+    } else if (deltaX < -50) {
+      scroll('right')
+    }
+  }
   const scroll = (direction) => {
     const { current } = scrollRef
 
@@ -39,6 +53,8 @@ const BestSellers = () => {
           <div
             className='flex flex-row w-max overflow-x-scroll truncate'
             ref={scrollRef}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
           >
             {filterData.map((plant) => (
               <Plant
