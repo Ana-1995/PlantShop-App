@@ -1,5 +1,6 @@
 import React from 'react'
 import { indoorHome, outdoorHome } from '../../assets'
+import { Link } from 'react-router-dom'
 
 
 const CareIntro = () => {
@@ -19,12 +20,12 @@ const CareIntro = () => {
             summer!
           </p>
           <div className='flex items-center lg:justify-start justify-center'>
-            <a
-              href='plantscare'
+            <Link
+              to={'/plantscare'}
               className='text-center main-btn mt-5 lg:mt-4 2xl:mt-7 py-3 px-5 shadow-gray-400 shadow-md text-md'
             >
               Care Tools
-            </a>
+            </Link>
           </div>
         </div>
         <div className='flex flex-1 lg:flex-[0.8]'>
@@ -58,12 +59,12 @@ const CareIntro = () => {
           </p>
 
           <div className='flex items-center lg:justify-start justify-center'>
-            <a
-              href='plantscare'
+            <Link
+              to={'/plantscare'}
               className='text-center main-btn mt-5 lg:mt-4 2xl:mt-7 py-3 px-5 shadow-gray-400 shadow-md text-md'
             >
               Care Tools
-            </a>
+            </Link>
           </div>
         </div>
       </div>

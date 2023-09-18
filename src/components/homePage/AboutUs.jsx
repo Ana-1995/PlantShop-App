@@ -1,5 +1,6 @@
 import React from 'react'
 import { coverAbout } from '../../assets'
+import { Link } from 'react-router-dom'
 
 const AboutUs = () => (
   <section className='bg-[#d0ebd0] sm:py-[4rem] sm:px-[2rem] flex justify-center items-center mb-4 lg:mb-10'>
@@ -21,7 +22,7 @@ const AboutUs = () => (
           type='button'
           className='main-btn p-2 md:p-4 my-3 md:my-0 md:text-2xl lg:text-sm 2xl:text-xl'
         >
-          <a href='workshops'> Know More</a>
+          <Link to={'/workshops'}>Know More</Link>
         </button>
       </div>
 
@@ -50,7 +51,7 @@ const AboutUs = () => (
           type='button'
           className='main-btn p-2 md:p-4 my-3 md:my-0 md:text-2xl lg:text-sm 2xl:text-xl'
         >
-          <a href='workshops'>Know More</a>
+          <Link to={'/workshops'}>Know More</Link>
         </button>
       </div>
     </div>
