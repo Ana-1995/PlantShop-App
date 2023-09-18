@@ -4,18 +4,18 @@ import { coverVideo } from '../../assets'
 import { potsData } from '../../constants/data'
 import { Link } from 'react-router-dom'
 
-const Video = () => {
- const videoRef=useRef()
- const [video, setVideo]=useState(false)
- 
- const handleVideo=()=>{
-  setVideo((prev)=>!prev)
-  if(video) {
-   videoRef.current.pause()
-  } else{
-   videoRef.current.play()
+const Video = ({ disableFullscreen }) => {
+  const videoRef = useRef()
+  const [video, setVideo] = useState(false)
+
+  const handleVideo = () => {
+    setVideo((prev) => !prev)
+    if (video) {
+      videoRef.current.pause()
+    } else {
+      videoRef.current.play()
+    }
   }
- }
 
   return (
     <div className='flex w-[92%] m-auto h-auto flex-col lg:flex-row justify-center gap-2 lg:gap-10 py-8'>
@@ -26,7 +26,7 @@ const Video = () => {
           ref={videoRef}
           type='video/mp4'
           loop
-          controls={false}
+          controls={!disableFullscreen}
           muted
         />
         <div className='flex justify-center items-center absolute inset-0 '>

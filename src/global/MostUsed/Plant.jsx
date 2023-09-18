@@ -17,10 +17,10 @@ const Plant = ({id, img, title, price, ExPrice, stars }) => {
   }
   return (
     <article
-      className='rounded-md border border-x-2 border-slate-200 relative h-[250px] min-w-[150px] bg-gradient-to-br from-yellow-50 to-orange-100 lg:min-w-[250px] lg:h-auto mr-0 lg:mr-5 flex flex-col justify-center group '
+      className='rounded-md border border-x-2 border-slate-200 relative min-w-[150px] bg-gradient-to-br from-yellow-50 to-orange-100 lg:min-w-[250px] lg:h-auto m-4 flex flex-col justify-center'
       key={id}
     >
-      <div className='overflow-hidden mx-3 m-auto rounded-t-md rounded-b-md group relative mt-3 h-[16rem]'>
+      <div className='overflow-hidden mx-3 m-auto rounded-t-md rounded-b-md group relative mt-3 h-auto md:h-44 lg:h-60'>
         <img
           src={img}
           alt='gallery_image'

@@ -7,18 +7,20 @@ const MainHome = () => (
   <section id='mainHome' className='w-full h-full relative lg:static'>
     <video
       className='w-full h-full object-cover'
-      src={videoBg}
       autoPlay
       loop
       muted
-    />
- 
+      playsInline
+    >
+      <source src={videoBg} type='video/mp4' />
+    </video>
+
     <div className='absolute w-full h-full top-0 lg:top-10 flex flex-col justify-center items-center'>
       <motion.div
         initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        className='text-center' 
+        className='text-center'
       >
         <h1 className='text-white text-3xl md:text-6xl lg:text-7xl tracking-wider font-semibold'>
           Turn Your Space Green
