@@ -46,6 +46,7 @@ The Green Space e-commerce website aims to provide users with a seamless plant s
 - **React Router**: Used for navigation within the application.
 - **React Icons**: Provides a wide range of icons for the user interface.
 - **Framer Motion**: Adds animations to create an engaging experience.
+- **React Scroll**: For scrolling on the same page. 
 - **React Modal**: Used for creating modals and dialogs.
 - **Tailwind CSS**: The CSS framework for styling.
 - **Vite**: The development and bundling tool.
