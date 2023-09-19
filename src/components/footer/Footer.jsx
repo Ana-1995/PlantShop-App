@@ -107,7 +107,7 @@ const Footer = () => (
 
           <div className='flex flex-col'>
             <p className='font-extrabold capitalize text-sm lg:text-base'>
-              #myplantstory
+              #GreenSpace
             </p>
             <p className='text-xs font-serif pt-1'>
               We believe in the power of plants to lift <br /> the spirit, calm
