@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import ContactIntro from './ContactIntro'
 import Footer from '../footer/Footer'
+import { Link } from 'react-router-dom'
 
 const Contact = () => {
   const [optionValue, setOptionValue] = useState('')
@@ -93,9 +94,9 @@ const Contact = () => {
               id='orderNumber'
               className='border border-slate-500 px-2 py-1 bg-[#ecf5ec]'
             />
-            <button className=' text-white bg-slate-700 w-min m-auto mt-6 py-1 px-3 hover:bg-black duration-300'>
+            <Link to={'/'} className=' text-white bg-slate-700 w-min m-auto mt-6 py-1 px-3 hover:bg-black duration-300'>
               Submit
-            </button>
+            </Link>
           </form>
         </div>
 

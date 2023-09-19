@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { videoBg } from '../../assets'
 import { motion } from 'framer-motion'
 
-const MainHome = () => (
-  <section id='mainHome' className='w-full h-full relative lg:static'>
+const MainHome = () => {
+    useEffect(()=>(
+    window.scrollTo(0, 0)
+  ), [])
+
+  return (
+     <section id='mainHome' className='w-full h-full relative lg:static'>
     <video
       className='w-full h-full object-cover'
       autoPlay
@@ -38,6 +43,8 @@ const MainHome = () => (
       </motion.div>
     </div>
   </section>
-)
+  )
+ 
+}
 
 export default MainHome
