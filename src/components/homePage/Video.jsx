@@ -26,7 +26,7 @@ const Video = ({ disableFullscreen }) => {
           ref={videoRef}
           type='video/mp4'
           loop
-          controls={!disableFullscreen}
+        
           muted
           playsInline
         />
