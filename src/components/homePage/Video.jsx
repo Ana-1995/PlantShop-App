@@ -4,7 +4,7 @@ import { coverVideo } from '../../assets'
 import { potsData } from '../../constants/data'
 import { Link } from 'react-router-dom'
 
-const Video = ({ disableFullscreen }) => {
+const Video = () => {
   const videoRef = useRef()
   const [video, setVideo] = useState(false)
 
