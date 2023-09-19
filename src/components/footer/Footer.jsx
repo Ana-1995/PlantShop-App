@@ -9,45 +9,65 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => (
   <section>
-   <FooterOverlay />
+    <FooterOverlay />
     <div className='h-[1px] bg-gray-300 mt-6 w-[85%] m-auto' />
 
     <div className='w-[85%] m-auto flex flex-row flex-wrap justify-between items-center'>
       <div className='flex flex-col flex-2'>
-        <a href='#'>
+        <Link to={'/'}>
           <img
             src={logo}
             className='h-[70px] w-[100px] object-cover pb-4'
             alt='logo'
           />
-        </a>
+        </Link>
 
         <div className='flex flex-row gap-4 hover:text-black'>
-          <a href='https://www.facebook.com/' target='blank'>
+          <a
+            href='https://www.facebook.com/'
+            target='blank'
+            rel='noopener noreferrer'
+          >
             <FaFacebook
               size={20}
               className='hover:text-black text-green-700 duration-500'
             />
           </a>
-          <a href='https://www.instagram.com/' target='blank'>
+          <a
+            href='https://www.instagram.com/'
+            target='blank'
+            rel='noopener noreferrer'
+          >
             <FaInstagram
               size={20}
               className='hover:text-black text-green-700 duration-500'
             />
           </a>
-          <a href='https://twitter.com/' target='blank'>
+          <a
+            href='https://twitter.com/'
+            target='blank'
+            rel='noopener noreferrer'
+          >
             <FaTwitter
               size={20}
               className='hover:text-black text-green-700 duration-500'
             />
           </a>
-          <a href='https://www.pinterest.com/' target='blank'>
+          <a
+            href='https://www.pinterest.com/'
+            target='blank'
+            rel='noopener noreferrer'
+          >
             <FaPinterest
               size={20}
               className='hover:text-black text-green-700 duration-500'
             />
           </a>
-          <a href='https://www.whatsapp.com/' target='blank'>
+          <a
+            href='https://www.whatsapp.com/'
+            target='blank'
+            rel='noopener noreferrer'
+          >
             <FaWhatsapp
               size={20}
               className='hover:text-black text-green-700 duration-500'
@@ -62,8 +82,8 @@ const Footer = () => (
             <p className='font-extrabold capitalize text-sm lg:text-base'>
               Help
             </p>
-            <Link to={'/contact'}
-          
+            <Link
+              to={'/contact'}
               className='text-xs font-serif pt-1 hover:text-green-500 duration-500 '
             >
               Contact Us
@@ -98,7 +118,8 @@ const Footer = () => (
             >
               Terms & Conditions
             </Link>
-            <Link to={'/contact'}    
+            <Link
+              to={'/contact'}
               className='text-xs font-serif hover:text-green-500 duration-500 '
             >
               Privacy & Cookies
