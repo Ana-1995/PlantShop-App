@@ -35,14 +35,14 @@ const Plant = ({id, img, title, price, ExPrice, stars }) => {
         </button>
       </div>
       <div className='flex flex-col justify-start text-start mx-3'>
-        <h4 className=' text-sm lg:text-lg pt-1 lg:pt-2 text-green-700'>
+        <h4 className=' text-md lg:text-lg pt-1 lg:pt-2 text-green-700'>
           {title}
         </h4>
         <Stars stars={stars} />
         <p className='flex flex-row gap-1'>
-          <span className='text-center text-green-800 font-bold font-sans pb-1 pt-0 lg:pt-2 text-sm lg:text-lg'>
+          <span className='text-center text-green-800 font-bold font-sans pb-1 pt-0 lg:pt-2 text-md lg:text-lg'>
             ${price}{' '}
-            <span className=' text-green-800 font-normal line-through pt-0 lg:pt-2  pb-1 text-sm lg:text-lg '>
+            <span className=' text-green-800 font-normal line-through pt-0 lg:pt-2  pb-1 text-md lg:text-lg '>
               {ExPrice ? `$${ExPrice}` : ''}
             </span>
             <span className='text-xs font-normal absolute bottom-2 right-1 hidden lg:block'>
