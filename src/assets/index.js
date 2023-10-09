@@ -93,7 +93,7 @@ import black12_1 from './black12_1.webp'
 import black13 from './black13.webp'
 import black13_1 from './black13_1.webp'
 import black13_2 from './black13_2.webp'
-import blue1 from './blue1.jpg'
+import blue1 from './blue1.webp'
 import blue1_1 from './blue1_1.webp'
 import blue1_2 from './blue1_2.webp'
 import blue2 from './blue2.jpg'
@@ -155,7 +155,6 @@ import potcare3 from './potcare3.webp'
 import potcare4 from './potcare4.webp'
 import potcare5 from './potcare5.webp'
 //home pages
-import videoBg from './videoBg.mp4'
 import illustration1 from  './illustration1.svg'
 import illustration2 from './illustration2.svg'
 import illustration3 from './illustration3.svg'
@@ -201,7 +200,6 @@ export {
   gif,
   plantGuide,
   innerCover,
-  videoBg,
   gift1,
   gift2,
   pot1,
