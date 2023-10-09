@@ -3,7 +3,7 @@ import { AiFillStar } from 'react-icons/ai'
 
 const Stars = ({ stars }) => {
   return (
-    <div className='flex flex-row justify-start items-start pt-1'>
+    <div className='flex flex-row justify-start items-start'>
       <AiFillStar color='green' className='text-sm lg:text-md' />
       <AiFillStar color='green' className='text-sm lg:text-md' />
       <AiFillStar color='green' className='text-sm lg:text-md' />
