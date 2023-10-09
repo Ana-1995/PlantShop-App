@@ -1,23 +1,10 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { BsFillPlayFill, BsPauseFill } from 'react-icons/bs'
 import { coverVideo } from '../../assets'
 import { potsData } from '../../constants/data'
 import { Link } from 'react-router-dom'
 
 const Video = () => {
-  const videoRef = useRef()
-  const [video, setVideo] = useState(false)
-
-const handleVideo = () => {
-  if (videoRef.current.paused) {
-    videoRef.current.play()
-  } else {
-    videoRef.current.pause()
-  }
-
-  setVideo(!videoRef.current.paused)
-}
-
 
   return (
     <div className='flex w-[92%] m-auto h-auto flex-col lg:flex-row justify-center gap-2 lg:gap-10 py-8'>
@@ -25,25 +12,13 @@ const handleVideo = () => {
         <video
           className='w-full h-full object-cover rounded-lg'
           src={coverVideo}
-          ref={videoRef}
           type='video/mp4'
           loop
+          autoPlay
           muted
           playsInline
           preload='auto'
         />
-        <div className='flex justify-center items-center absolute inset-0 '>
-          <div
-            className='flex justify-center items-center w-[50px] h-[50px] rounded-full cursor-pointer border-solid border-white border-2'
-            onClick={handleVideo}
-          >
-            {video ? (
-              <BsPauseFill color='#fff' fontSize={24} />
-            ) : (
-              <BsFillPlayFill color='#fff' fontSize={24} />
-            )}
-          </div>
-        </div>
       </div>
 
       <div className='flex flex-col items-center lg:items-start gap-y-2 lg:gap-y-7 flex-1'>
