@@ -12,7 +12,7 @@ import Video from './Video'
 const Home = () => {
   return ( 
     <>
-      <section className=''>
+      <div>
        <MainHome />
         <Advert />
         <AboutUs />
@@ -23,7 +23,7 @@ const Home = () => {
         <Reviews />
         <Delivery />
         <Footer />
-      </section>
+      </div>
     </>
   )
 }
