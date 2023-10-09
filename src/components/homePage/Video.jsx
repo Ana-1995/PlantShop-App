@@ -26,9 +26,10 @@ const Video = () => {
           ref={videoRef}
           type='video/mp4'
           loop
-        
+          autoPlay
           muted
           playsInline
+          preload='auto'
         />
         <div className='flex justify-center items-center absolute inset-0 '>
           <div
