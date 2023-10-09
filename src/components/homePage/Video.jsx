@@ -8,14 +8,16 @@ const Video = () => {
   const videoRef = useRef()
   const [video, setVideo] = useState(false)
 
-  const handleVideo = () => {
-    setVideo((prev) => !prev)
-    if (video) {
-      videoRef.current.pause()
-    } else {
-      videoRef.current.play()
-    }
+const handleVideo = () => {
+  if (videoRef.current.paused) {
+    videoRef.current.play()
+  } else {
+    videoRef.current.pause()
   }
+
+  setVideo(!videoRef.current.paused)
+}
+
 
   return (
     <div className='flex w-[92%] m-auto h-auto flex-col lg:flex-row justify-center gap-2 lg:gap-10 py-8'>
@@ -26,7 +28,6 @@ const Video = () => {
           ref={videoRef}
           type='video/mp4'
           loop
-          autoPlay
           muted
           playsInline
           preload='auto'

@@ -25,6 +25,7 @@ const MainHome = () => {
        ) : (
          <video
            className='w-full h-full object-cover'
+           type='video/mp4'
            autoPlay
            loop
            muted
