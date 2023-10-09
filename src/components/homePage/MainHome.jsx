@@ -7,7 +7,7 @@ const MainHome = () => {
   useEffect(() => window.scrollTo(0, 0), [])
   const isMobile = window.innerWidth < 768
   const initialAnimationProps = isMobile
-    ? { opacity: 0, y: 0 } 
+    ? { opacity: 0, y: 20 } 
     : { opacity: 0, y: 70 } 
   return (
     <section id='mainHome' className='w-full h-full relative lg:static'>

@@ -12,7 +12,7 @@ import Video from './Video'
 const Home = () => {
   return ( 
     <>
-      <section className='w-full h-auto lg:h-[100vh]'>
+      <section className=''>
        <MainHome />
         <Advert />
         <AboutUs />
