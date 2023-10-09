@@ -1,4 +1,4 @@
-import React, { lazy, useEffect } from 'react'
+import React, {  useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { videoBg } from '../../assets'
 import { motion } from 'framer-motion'

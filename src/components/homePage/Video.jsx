@@ -1,11 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { BsFillPlayFill, BsPauseFill } from 'react-icons/bs'
+import React from 'react'
 import { coverVideo } from '../../assets'
 import { potsData } from '../../constants/data'
 import { Link } from 'react-router-dom'
 
 const Video = () => {
-
   return (
     <div className='flex w-[92%] m-auto h-auto flex-col lg:flex-row justify-center gap-2 lg:gap-10 py-8'>
       <div className='flex flex-1 relative rounded-lg'>
