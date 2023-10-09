@@ -12,7 +12,7 @@ const CareIntro = () => {
           <h3 className='text-2xl text-center lg:text-start md:text-3xl lg:text-3xl 2xl:text-4xl font-bold text-green-900 tracking-wide '>
             How To Help Indoor Plants Survive The Winter
           </h3>
-          <p className=' md:text-lg lg:text-[1.05rem] tracking-wide 2xl:tracking-wider leading-1 lg:leading-6 2xl:leading-8 font-mono font-light pt-3  text-center lg:text-start '>
+          <p className=' md:text-lg lg:text-[1.05rem] tracking-wide 2xl:tracking-wider leading-1 lg:leading-6 2xl:leading-8 font-mono font-light pt-3 text-justify lg:text-start '>
             During the winter, tropical indoor plants are at the mercy of drafty
             windows, drying furnaces, and colder temperatures. To help your
             indoor plants survive the cold winter months, follow these tips from
@@ -50,7 +50,7 @@ const CareIntro = () => {
           <h3 className='text-2xl text-center lg:text-start md:text-3xl lg:text-3xl 2xl:text-4xl font-bold text-green-900 tracking-wide '>
             How To Water Outdoor Potted Plants
           </h3>
-          <p className=' md:text-lg lg:text-[1.05rem] tracking-wide 2xl:tracking-wider leading-1 lg:leading-6 2xl:leading-8 font-mono font-light pt-3 text-center lg:text-start'>
+          <p className=' md:text-lg lg:text-[1.05rem] tracking-wide 2xl:tracking-wider leading-1 lg:leading-6 2xl:leading-8 font-mono font-light pt-3 text-justify lg:text-start'>
             Most outdoor potted plants can grow quite happily without too much
             help. But if you’re growing fruits and vegetables or a beautiful
             display of flowers, giving them some food can help produce a bumper

@@ -22,7 +22,7 @@ useEffect(()=>(
               {' '}
               {each.title}{' '}
             </h1>
-            <p className='pt-2 sm:text-xl lg:text-base'>{each.article}</p>
+            <p className='pt-2  sm:text-xl lg:text-base'>{each.article}</p>
             <p className='pt-2 sm:text-xl lg:text-base '>{each.articleBr}</p>
             <img
               src={each.img}
