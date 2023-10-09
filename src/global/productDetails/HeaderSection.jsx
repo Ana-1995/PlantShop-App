@@ -46,7 +46,7 @@ const HeaderSection = ({ product }) => {
             <span className='text-green-800 text-xl md:text-2xl lg:text-xl '>
               ${product.price}
             </span>
-            <span className='text-green-800 line-through font-normal pl-0 lg:pl-3 text-xl md:text-2xl lg:text-xl '>
+            <span className='text-green-800 line-through font-normal pl-2 lg:pl-3 text-xl md:text-2xl lg:text-xl '>
               {product.ExPrice && `$${product.ExPrice}`}
             </span>
           </p>

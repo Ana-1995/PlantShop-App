@@ -17,7 +17,7 @@ const Plant = ({id, img, title, price, ExPrice, stars }) => {
   }
   return (
     <article
-      className='rounded-md border border-x-2 border-slate-200 relative min-w-[150px] bg-gradient-to-br from-yellow-50 to-orange-100 lg:min-w-[250px] lg:h-auto m-2 lg:m-4 flex flex-col justify-center'
+      className='rounded-md border border-x-2 border-slate-200 relative min-w-[180px] bg-gradient-to-br from-yellow-50 to-orange-100 lg:min-w-[250px] lg:h-auto m-2 lg:m-4 flex flex-col justify-center'
       key={id}
     >
       <div className='overflow-hidden mx-3 m-auto rounded-t-md rounded-b-md group relative mt-3 h-auto md:h-44 lg:h-60'>
@@ -35,20 +35,20 @@ const Plant = ({id, img, title, price, ExPrice, stars }) => {
         </button>
       </div>
       <div className='flex flex-col justify-start text-start mx-3'>
-        <h4 className=' text-md lg:text-lg pt-1 lg:pt-2 text-green-700'>
+        <h4 className='text-[1.3rem] pt-0 lg:pt-2 text-green-700'>
           {title}
         </h4>
         <Stars stars={stars} />
-        <p className='flex flex-row gap-1'>
-          <span className='text-center text-green-800 font-bold font-sans pb-1 pt-0 lg:pt-2 text-md lg:text-lg'>
-            ${price}{' '}
-            <span className=' text-green-800 font-normal line-through pt-0 lg:pt-2  pb-1 text-md lg:text-lg '>
+        <p className='flex flex-row'>
+          <span className='text-center text-green-800 font-bold font-sans pb-1 pt-0 lg:pt-1 text-lg'>
+            ${price} </span>
+            <span className=' text-green-800 font-normal line-through pt-0 lg:pt-1 pb-1 text-lg pl-2 '>
               {ExPrice ? `$${ExPrice}` : ''}
             </span>
             <span className='text-xs font-normal absolute bottom-2 right-1 hidden lg:block'>
               Free Shipping
             </span>
-          </span>
+         
         </p>
       </div>
     </article>

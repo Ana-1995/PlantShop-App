@@ -756,7 +756,7 @@ export const plantsData = [
     id: 39,
     img: gray10,
     photos: [gray10, gray10_1],
-    title: 'Dracaena Warneckii',
+    title: 'Dracaena Warn',
     stars: 45,
     position: 'bestSellers',
     price: 112.0,

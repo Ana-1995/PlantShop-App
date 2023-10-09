@@ -48,8 +48,8 @@ const RelatedProductsSection = ({ products, selectedProductId }) => {
               id={plant.id}
               img={plant.img}
               title={<Link to={`/products/${plant.id}`}>{plant.title}</Link>}
-              ExPrice={plant.ExPrice && plant.ExPrice}
-              price={plant.price}
+               price={plant.price}
+              ExPrice={plant.ExPrice && plant.ExPrice}    
               stars={`(${plant.stars})`}
             />
           ))}

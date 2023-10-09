@@ -177,7 +177,7 @@ if (isLoading) {
         <div
           className={`${
             resetAnimation ? 'slide-in-right' : ''
-          }  flex flex-row flex-wrap justify-center lg:justify-evenly gap-y-5  flex-1`}
+          }  flex flex-row flex-wrap justify-center lg:justify-evenly gap-y-5 flex-1`}
         >
           {filteredPlants.map((plant, i) => (
             <Plant
