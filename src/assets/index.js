@@ -1,5 +1,5 @@
 //screenshot of my homepage
-import plantshop from './plantshop.png'
+import plantshop from './plantshop.jpg'
 //main logo
 import logo from './logo.png'
 //plants data

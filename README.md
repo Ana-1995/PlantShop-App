@@ -2,7 +2,7 @@
  
 **Live Website**: [https://plant-shop-app.vercel.app/]
 
-![Project Preview](./src/assets/plantshop.png)
+![Project Preview](./src/assets/plantshop.jpg)
 
 **Green Space** is an e-commerce website developed using React.js. It serves as the front-end for an online plant shop, enabling users to browse, search, and purchase various plants. This project showcases my front-end development skills and is an integral part of my portfolio.
 
