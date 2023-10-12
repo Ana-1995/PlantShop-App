@@ -79,7 +79,7 @@ if (isLoading) {
             Categories
           </h3>
           <button
-            className='font-sans text-sm pl-0 lg:pl-1 text-slate-500 font-semibold'
+            className={`${selectedFilters.category === null ? 'font-semibold text-black' : 'text-base text-slate-500'} font-sans text-sm pl-0 lg:pl-1 `}
             onClick={handleAllPlantsFilter}
           >
             All Plants

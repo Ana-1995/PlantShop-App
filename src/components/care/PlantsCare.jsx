@@ -9,7 +9,6 @@ import {CentralTitle, Delivery, Plant} from '../../global'
 
 const PlantsCare = () => {
   const [searchQuery, setSearchQuery] = useState('')
-  const [category, setCategory] = useState(null)
   const [selectedCategoryFilter, setSelectedCategoryFilter] = useState(null)
   //animation
   const [resetAnimation, setResetAnimation] = useState(false)
@@ -23,7 +22,6 @@ const PlantsCare = () => {
     setSearchQuery(e.target.value)
   }
   const handleCategoryFilter = (category) => {
-    setCategory(category)
     setSelectedCategoryFilter(category)
   }
   const handleAllFilter = () => {
@@ -61,24 +59,24 @@ const PlantsCare = () => {
       <div className='flex flex-row w-[75%] m-auto items-center justify-center lg:justify-between mb-5'>
         <div className='flex flex-row gap-4 bg-amber-100 p-3 rounded-lg '>
           <button
-            className={`${category === 'pot' ? 'font-bold' : 'font-normal'}`}
+            className={`${selectedCategoryFilter === 'pot' ? 'font-bold' : 'font-normal'}`}
             onClick={() => handleCategoryFilter('pot')}
           >
             Pots 
           </button>
           <button
-            className={`${category === 'tool' ? 'font-bold' : 'font-normal'}`}
+            className={`${selectedCategoryFilter === 'tool' ? 'font-bold' : 'font-normal'}`}
             onClick={() => handleCategoryFilter('tool')}
           >
             Tools 
           </button>
           <button
-            className={`${category === 'supply' ? 'font-bold' : 'font-normal'}`}
+            className={`${selectedCategoryFilter === 'supply' ? 'font-bold' : 'font-normal'}`}
             onClick={() => handleCategoryFilter('supply')}
           >
             Supplies |
           </button>
-          <button className='font-semibold' onClick={handleAllFilter}>
+          <button className={`${selectedCategoryFilter === null ? 'font-bold' : 'font-normal'}`} onClick={handleAllFilter}>
             All 
           </button>
         </div>
