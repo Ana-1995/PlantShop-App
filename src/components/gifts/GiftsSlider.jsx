@@ -10,8 +10,8 @@ const GiftsSlider = () => {
   const [resetAnimation, setResetAnimation] = useState(false)
     const [touchStartX, setTouchStartX] = useState(0)
   useEffect(() => {
-    setResetAnimation(false) // Reset animation
-    setTimeout(() => setResetAnimation(true), 0) 
+     // Reset animation
+    setResetAnimation(true)
   }, [])
 
   const handleTouchStart = (e) => {
@@ -55,7 +55,7 @@ const GiftsSlider = () => {
 
         <div
           className={`${
-            resetAnimation ? 'slide-in-right' : ''
+            resetAnimation ? 'slide-in-right' : 'hidden'
           } flex flex-row flex-1 max-w-full mb-4 lg:mb-7 m-auto lg:max-w-5xl relative`}
         >
           <div
@@ -77,11 +77,11 @@ const GiftsSlider = () => {
 
             <div className='w-full m-auto flex justify-between items-center absolute bottom-[46%]'>
               <FaChevronLeft
-                className='text-white text-2xl lg:text-5xl cursor-pointer py-1 lg:py-2  bg-green-800'
+                className='text-white text-2xl lg:text-5xl cursor-pointer py-1 lg:py-2 bg-green-800'
                 onClick={() => scroll('left')}
               />
               <FaChevronRight
-                className='text-white text-2xl lg:text-5xl cursor-pointer py-1 lg:py-2  bg-green-800 '
+                className='text-white text-2xl lg:text-5xl cursor-pointer py-1 lg:py-2 bg-green-800 '
                 onClick={() => scroll('right')}
               />
             </div>

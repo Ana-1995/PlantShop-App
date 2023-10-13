@@ -23,7 +23,7 @@ const MainHome = () => {
           src={fallbackImage}
           alt='Mobile Fallback'
           className={`w-full h-full object-cover ${
-            resetAnimation ? 'fade-in-animation' : ''
+            resetAnimation ? 'fade-in-animation' : 'hidden'
           }`}
         />
       </div>

@@ -20,14 +20,12 @@ const Store = () => {
     careLevel: null,
   })
   const [searchQuery, setSearchQuery] = useState('')
-  
   const [resetAnimation, setResetAnimation] = useState(false)
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    setResetAnimation(false)
-    setTimeout(() => setResetAnimation(true), 0)
     setTimeout(() => setIsLoading(false), 2000)
+    setTimeout(() => setResetAnimation(true), 2000)
   }, [])
 
 if (isLoading) {
@@ -176,7 +174,7 @@ if (isLoading) {
 
         <div
           className={`${
-            resetAnimation ? 'slide-in-right' : ''
+            resetAnimation ? 'slide-in-right' : 'hidden'
           }  flex flex-row flex-wrap justify-center lg:justify-evenly gap-y-5 flex-1`}
         >
           {filteredPlants.map((plant, i) => (

@@ -10,8 +10,7 @@ const Dropdown = () => {
   //animation
   const [resetAnimation, setResetAnimation] = useState(false)
   useEffect(() => {
-    setResetAnimation(resetAnimation) 
-    setTimeout(() => setResetAnimation(!resetAnimation), 0) 
+ setResetAnimation(true)
   }, [])
 
   return (

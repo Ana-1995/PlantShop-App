@@ -17,13 +17,12 @@ const Indoor = () => {
   })
   const [searchQuery, setSearchQuery] = useState('')
  const [resetAnimation, setResetAnimation] = useState(false)
-   useEffect(() => {
-     window.scrollTo(0, 0)
-     setResetAnimation(false)
-     setTimeout(() => setResetAnimation(true), 0)
-     setTimeout(() => setIsLoading(false), 1200)
-   }, [])
-
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false)
+      setResetAnimation(true)
+    }, 1200)
+  }, [])
    if (isLoading) {
      return <Loader />
    }
@@ -143,7 +142,7 @@ const Indoor = () => {
         </div>
         <div
           className={`${
-            resetAnimation ? 'slide-in-right' : ''
+            resetAnimation ? 'slide-in-right' : 'hidden'
           } flex flex-row flex-wrap justify-center lg:justify-start gap-x-3 gap-y-4 flex-1`}
         >
           {filteredPlants.map((plant, i) => (

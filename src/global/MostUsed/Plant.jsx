@@ -35,7 +35,7 @@ const Plant = ({id, img, title, price, ExPrice, stars }) => {
         </button>
       </div>
       <div className='flex flex-col justify-start text-start mx-3'>
-        <h4 className='text-[1.3rem] pt-0 lg:pt-2 text-green-700'>
+        <h4 className='text-[1.3rem] pt-0 lg:pt-2 text-green-700 duration-300 hover:text-green-500 font-semibold'>
           {title}
         </h4>
         <Stars stars={stars} />

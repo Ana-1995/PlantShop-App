@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BsFillMoonStarsFill, BsEmojiSmile } from 'react-icons/bs'
@@ -8,10 +8,14 @@ import { useCart } from '../cartContexts/CartContext'
 const HeaderSection = ({ product }) => {
   const { addToCart } = useCart() 
   const [selectedPhoto, setSelectedPhoto] = useState('') 
+  const [resetAnimation, setResetAnimation] = useState(false)
 
+  useEffect(() => {
+    setResetAnimation(true)
+  }, [])
   return (
     <section className='m-auto w-[90%] mb-10' key={product.id}>
-      <div className='flex flex-col lg:flex-row mt-4 lg:mt-12'>
+      <div className={`${resetAnimation ? 'scale-in-ver-top' : 'hidden'} flex flex-col lg:flex-row mt-4 lg:mt-12`}>
         <div className='flex flex-row justify-center lg:justify-start lg:flex-col  gap-2 mt-1 overflow-x-auto '>
           {product.photos.map((photo, index) => (
             <img

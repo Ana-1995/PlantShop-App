@@ -20,10 +20,9 @@ const PetFriendly = () => {
   const [resetAnimation, setResetAnimation] = useState(false)
 
   useEffect(() => {
-    setResetAnimation(false)
-    setTimeout(() => setResetAnimation(true), 0)
     setTimeout(() => {
       setIsLoading(false)
+     setResetAnimation(true)
     }, 1200)
   }, [])
 
@@ -152,7 +151,7 @@ const PetFriendly = () => {
 
         <div
           className={`${
-            resetAnimation ? 'slide-in-right' : ''
+            resetAnimation ? 'slide-in-right' : 'hidden'
           } flex flex-row flex-wrap justify-center lg:justify-start gap-x-3 gap-y-4 flex-1`}
         >
           {filteredPlants.map((plant, i) => (
