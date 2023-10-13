@@ -64,7 +64,7 @@ const Contact = () => {
               onChange={handleEmailChange}
             />
             {!isValidEmail && (
-              <p className='text-red-500 text-sm'>Invalid email format</p>
+              <p className='text-red-500 text-xs'>Invalid email format</p>
             )}
 
             <label

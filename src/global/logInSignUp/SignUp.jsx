@@ -114,7 +114,7 @@ const SignUp = () => {
               required
             />
             {!isValidEmail && (
-              <p className='text-red-500 text-sm'>Invalid email format</p>
+              <p className='text-red-500 text-xs'>Invalid email format</p>
             )}
 
             <label htmlFor='password' className='uppercase text-xs pb-2 pt-4'>

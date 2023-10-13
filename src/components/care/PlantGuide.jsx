@@ -9,8 +9,10 @@ const PlantGuide = () => {
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
   const [messageSent, setMessageSent] = useState(false)
+  const [resetAnimation, setResetAnimation] = useState(false)
 useEffect(() => {
   window.scrollTo(0, 0)
+setResetAnimation(true)
 }, [])
   const handleSendClick = () => {
     setName('')
@@ -25,7 +27,7 @@ useEffect(() => {
   return (
     <>
       <CentralTitle title={'Our Plant Doctors work for you!'} />
-      <div className='flex flex-row flex-wrap gap-6 lg:gap-20 justify-center items-start mt-4 lg:mt-12 mb-4 lg:mb-14'>
+      <div className={`${resetAnimation ? 'fade-in-fwd' : 'hidden'} flex flex-row flex-wrap gap-6 lg:gap-20 justify-center items-start mt-4 lg:mt-12 mb-4 lg:mb-14`}>
         <div className='flex h-[20rem] md:h-[30rem] md:w-[24rem] lg:h-[33rem] w-[20rem] lg:w-[30rem] '>
           <img
             className='w-full h-full object-cover'
