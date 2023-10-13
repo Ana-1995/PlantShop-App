@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react'
 import ContactIntro from './ContactIntro'
 import Footer from '../footer/Footer'
@@ -6,10 +5,23 @@ import { Link } from 'react-router-dom'
 
 const Contact = () => {
   const [optionValue, setOptionValue] = useState('')
+  const [email, setEmail] = useState('')
+  const [isValidEmail, setIsValidEmail] = useState(true)
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+    return emailRegex.test(email)
+  }
+
+  const handleEmailChange = (e) => {
+    const newEmail = e.target.value
+    setEmail(newEmail)
+    setIsValidEmail(validateEmail(newEmail))
+  }
 
   return (
     <>
@@ -45,8 +57,15 @@ const Contact = () => {
             <input
               type='email'
               id='email'
-              className='border border-slate-500 bg-[#ecf5ec]'
+              className={`border border-slate-500 bg-[#ecf5ec] ${
+                !isValidEmail ? 'border-red-500' : ''
+              }`}
+              value={email}
+              onChange={handleEmailChange}
             />
+            {!isValidEmail && (
+              <p className='text-red-500 text-sm'>Invalid email format</p>
+            )}
 
             <label
               htmlFor='questionType'
@@ -94,7 +113,12 @@ const Contact = () => {
               id='orderNumber'
               className='border border-slate-500 px-2 py-1 bg-[#ecf5ec]'
             />
-            <Link to={'/'} className=' text-white bg-slate-700 w-min m-auto mt-6 py-1 px-3 hover:bg-black duration-300'>
+            <Link
+              to={'/'}
+              className={`text-white bg-slate-700 w-min m-auto mt-6 py-1 px-3 hover:bg-black duration-300 ${
+                !isValidEmail ? 'pointer-events-none opacity-50' : ''
+              }`}
+            >
               Submit
             </Link>
           </form>

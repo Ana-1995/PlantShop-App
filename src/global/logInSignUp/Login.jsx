@@ -1,41 +1,54 @@
-
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Footer } from '../../components'
 
 const Login = () => {
- const [email, setEmail] = useState('')
- const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [isValidEmail, setIsValidEmail] = useState(true)
 
- const handleEmailChange = (e) => {
-   setEmail(e.target.value)
- }
+  const handleEmailChange = (e) => {
+    const newEmail = e.target.value
+    setEmail(newEmail)
+    setIsValidEmail(validateEmail(newEmail))
+  }
 
- const handlePasswordChange = (e) => {
-   setPassword(e.target.value)
- }
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value)
+  }
 
-const handleSubmit = async (e) => {
-  e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault()
 
-  try {
-    const requestBody = {
-      email,
-      password,
+    if (!isValidEmail) {
+      return
     }
 
-    const response = await fetch('/api/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(requestBody),
-    })
+    try {
+      const requestBody = {
+        email,
+        password,
+      }
 
-  } catch (error) {
-    console.error('An error occurred:', error)
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
+      })
+
+
+    } catch (error) {
+      console.error('An error occurred:', error)
+    }
   }
-}
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+    return emailRegex.test(email)
+  }
+
   return (
     <>
       <div className='flex flex-col mt-6 lg:mt-32 mb-6 lg:mb-14'>
@@ -61,9 +74,15 @@ const handleSubmit = async (e) => {
               id='email'
               value={email}
               onChange={handleEmailChange}
-              className='bg-[#ecf5ec] border border-slate-400 py-5 pl-2'
+              className={`bg-[#ecf5ec] border border-slate-400 py-5 pl-2 ${
+                !isValidEmail ? 'border-red-500' : ''
+              }`}
               required
             />
+            {!isValidEmail && (
+              <p className='text-red-500 text-sm'>Invalid email format</p>
+            )}
+
             <label htmlFor='password' className='uppercase text-xs pb-2 pt-4'>
               Your password
             </label>
@@ -78,7 +97,11 @@ const handleSubmit = async (e) => {
           </form>
         </div>
         <div className='flex flex-row items-baseline justify-center pt-5  '>
-          <button className='bg-green-600 py-2 lg:py-3 px-6 mr-2 lg:mr-48 duration-300 hover:bg-green-700 rounded-3xl text-white tracking-wide uppercase'>
+          <button
+            className={`bg-green-600 py-2 lg:py-3 px-6 mr-2 lg:mr-48 duration-300 hover:bg-green-700 rounded-3xl text-white tracking-wide uppercase ${
+              !isValidEmail ? 'pointer-events-none opacity-50' : ''
+            }`}
+          >
             Log In
           </button>
           <a href='/' className='underline'>
@@ -92,4 +115,3 @@ const handleSubmit = async (e) => {
 }
 
 export default Login
-

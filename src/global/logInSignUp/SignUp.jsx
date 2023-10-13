@@ -7,6 +7,7 @@ const SignUp = () => {
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [isValidEmail, setIsValidEmail] = useState(true)
 
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value)
@@ -17,7 +18,9 @@ const SignUp = () => {
   }
 
   const handleEmailChange = (e) => {
-    setEmail(e.target.value)
+    const newEmail = e.target.value
+    setEmail(newEmail)
+    setIsValidEmail(validateEmail(newEmail))
   }
 
   const handlePasswordChange = (e) => {
@@ -26,6 +29,10 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    if (!isValidEmail) {
+      return
+    }
 
     try {
       const requestBody = {
@@ -46,6 +53,11 @@ const SignUp = () => {
     } catch (error) {
       console.error('An error occurred:', error)
     }
+  }
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+    return emailRegex.test(email)
   }
 
   return (
@@ -96,9 +108,14 @@ const SignUp = () => {
               id='email'
               value={email}
               onChange={handleEmailChange}
-              className='bg-[#ecf5ec] border border-slate-400 py-5 pl-2'
+              className={`bg-[#ecf5ec] border border-slate-400 py-5 pl-2 ${
+                !isValidEmail ? 'border-red-500' : ''
+              }`}
               required
             />
+            {!isValidEmail && (
+              <p className='text-red-500 text-sm'>Invalid email format</p>
+            )}
 
             <label htmlFor='password' className='uppercase text-xs pb-2 pt-4'>
               Your password
@@ -115,7 +132,11 @@ const SignUp = () => {
         </div>
 
         <div className='flex flex-row items-baseline justify-center pt-5'>
-          <button className='bg-green-600 py-3 px-6 w-[18rem] md:w-[22rem] lg:w-[28rem] duration-300 hover:bg-green-700 rounded-3xl text-white tracking-wide uppercase'>
+          <button
+            className={`bg-green-600 py-3 px-6 w-[18rem] md:w-[22rem] lg:w-[28rem] duration-300 hover:bg-green-700 rounded-3xl text-white tracking-wide uppercase ${
+              !isValidEmail ? 'pointer-events-none opacity-50' : ''
+            }`}
+          >
             Sign Up
           </button>
         </div>
@@ -126,4 +147,3 @@ const SignUp = () => {
 }
 
 export default SignUp
-
