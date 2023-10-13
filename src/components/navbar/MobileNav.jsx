@@ -9,6 +9,11 @@ import { useCart } from '../../global/cartContexts/CartContext'
 const MobileNav = () => {
   const [toggle, setToggle] = useState(false)
  const { cartItems } = useCart()
+   // Calculate the total quantity of items in the cart
+  const totalQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  )
   return (
     <div className='mob__nav pb-2 pt-2 px-2 md:pt-4 md:pb-4 bg-gradient-to-r from-yellow-50 to-yellow-100 '>
       <div className='flex items-center justify-between '>
@@ -29,10 +34,13 @@ const MobileNav = () => {
           </Link>
           <div className='flex items-center relative'>
             <Link to={'/cart'}>
+             
               <BsCart />
-              <span className='absolute bottom-2 left-2 bg-green-600 text-white px-2 py-[2px] rounded-full text-xs font-sans'>
-                {cartItems.length}
-              </span>
+              {totalQuantity > 0 && (
+                <span className=' absolute bottom-2 left-2 bg-green-600 text-white px-2 py-[2px] rounded-full text-xs font-sans'>
+                  {totalQuantity}
+                </span>
+              )}
             </Link>
           </div>
         </div>

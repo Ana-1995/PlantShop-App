@@ -35,7 +35,10 @@ const MainNav = () => {
       setDropdown(false)
     }
   }
-
+  const totalQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  )
   return (
     <div className='flex justify-between items-center w-full py-[13px] px-5 bg-yellow-50 text-green-800 font-bold'>
       <div className='flex justify-start items-center' id='mainNav'>
@@ -112,10 +115,13 @@ const MainNav = () => {
           className='my-0 mx-[0.3rem] ease-in duration-300 hover:text-[#000] relative'
           to={'/cart'}
         >
+          
           <BsCart />
-          <span className='absolute bottom-3 left-2 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-sans'>
-            {cartItems.length}
-          </span>
+          {totalQuantity > 0 && (
+            <span className='absolute bottom-3 left-2 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-sans'>
+              {totalQuantity}
+            </span>
+          )}
         </Link>
       </div>
     </div>

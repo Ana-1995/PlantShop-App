@@ -5,37 +5,37 @@ import { Link } from 'react-router-dom'
 import { MdPlayArrow } from 'react-icons/md'
 
 const Cart = () => {
-  const { cartItems, removeFromCart, clearCart } = useCart()
+  const { cartItems, addToCart, removeFromCart, clearCart } = useCart()
 
- const getTotalPrice = () => {
-   const total = cartItems.reduce((acc, item) => {
-     const price = parseFloat(item.price) 
-     if (!isNaN(price)) {
-       return acc + price
-     }
-     return acc
-   }, 0)
+  const getTotalPrice = () => {
+    const total = cartItems.reduce((acc, item) => {
+      const price = parseFloat(item.price)
+      if (!isNaN(price)) {
+        return acc + price * item.quantity
+      }
+      return acc
+    }, 0)
 
-   return total
- }
+    return total
+  }
 
   return (
     <div className=' bg-gray-100 p-4'>
-      <h2 className='text-3xl font-semibold mb-2 ml-4 text-center lg:text-start'>Your Cart</h2>
+      <h2 className='text-3xl font-semibold mb-2 ml-4 text-center lg:text-start'>
+        Your Cart
+      </h2>
       {cartItems.length === 0 ? (
-        <div className="mb-4 flex flex-col lg:flex-row items-center">
-        <p>
-          Your Cart Is Empty
-           </p>
-         <div className="flex flex-row items-center">
-          <Link
-            to={'/stores'}
-            className='text-lg pl-2 font-sans text-green-700 hover:text-green-600'
-          >
-            Continue Shopping 
-          </Link>
-          <MdPlayArrow className='text-green-800' />
-       </div>
+        <div className='mb-4 flex flex-col lg:flex-row items-center'>
+          <p>Your Cart Is Empty</p>
+          <div className='flex flex-row items-center'>
+            <Link
+              to={'/stores'}
+              className='text-lg pl-2 font-sans text-green-700 hover:text-green-600'
+            >
+              Continue Shopping
+            </Link>
+            <MdPlayArrow className='text-green-800' />
+          </div>
         </div>
       ) : (
         <div>
@@ -51,26 +51,36 @@ const Cart = () => {
               />
               <div className='flex flex-col justify-start ml-4'>
                 <p className='text-lg font-semibold text-green-800'>
-                  {item.title}
+                  {item.title} ({item.quantity})
                 </p>
                 <p className='text-gray-600 pt-1'>
                   Price: <span className='font-bold'>${item.price}</span>{' '}
                 </p>
-                <button
-                  onClick={() => {
-                    removeFromCart(item.id) 
-                  }}
-                  className='text-red-600 font-medium hover:text-red-800 text-start pt-2 tracking-wider '
-                >
-                  <RiDeleteBin6Line size={25} />
-                </button>
+                <div className='flex gap-1'>
+                  <button
+                    onClick={() => {
+                      removeFromCart(item.id) // Remove one instance of the product
+                    }}
+                    className='text-red-500 font-semibold text-4xl font-sans hover:text-red-700 text-start pt-2 tracking-wider'
+                  >
+                    -
+                  </button>
+                  <button
+                    onClick={() => {
+                      addToCart(item) // Remove all instances of the product
+                    }}
+                    className='text-green-500 font-medium text-4xl font-sans hover:text-green-700 text-start pt-2 tracking-wider'
+                  >
+                    +
+                  </button>
+                </div>
               </div>
             </div>
           ))}
           <div className='mt-2 flex flex-row gap-3'>
             <p className='mt-2 text-xl font-bold'>Total: ${getTotalPrice()}</p>
             <button
-              onClick={clearCart} 
+              onClick={clearCart}
               className='text-red-700 hover:text-red-900 border-l border-slate-400 font-bold tracking-wide mt-2 pl-2'
             >
               Clear Cart
