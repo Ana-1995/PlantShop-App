@@ -9,7 +9,7 @@ import { useCart } from '../../global/cartContexts/CartContext'
 const MobileNav = () => {
   const [toggle, setToggle] = useState(false)
  const { cartItems } = useCart()
-   // Calculate the total quantity of items in the cart
+
   const totalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
     0

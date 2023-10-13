@@ -1,6 +1,5 @@
 import React from 'react'
 import { useCart } from './CartContext'
-import {RiDeleteBin6Line} from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import { MdPlayArrow } from 'react-icons/md'
 
