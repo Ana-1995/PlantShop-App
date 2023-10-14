@@ -72,29 +72,58 @@ if (isLoading) {
     <>
       <CentralTitle title={'Our Store'} />
       <div className='flex flex-row w-[90%] m-auto justify-between 2xl:justify-between items-center'>
-        <div className='flex flex-row w-[95%] m-auto lg:m-0 lg:w-fit pb-4 lg:pb-6 justify-center items-center'>
-          <h3 className='pr-0 lg:pr-2 text-2xl hidden lg:block font-semibold'>
-            Categories
-          </h3>
-          <button
-            className={`${selectedFilters.category === null ? 'font-semibold text-black' : 'text-base text-slate-500'} font-sans text-sm pl-0 lg:pl-1 `}
-            onClick={handleAllPlantsFilter}
-          >
-            All Plants
-          </button>
-          {['Indoor', 'Outdoor', 'Pet Friendly'].map((category) => (
+        <div className='flex flex-col  justify-center lg:justify-start items-center m-auto lg:m-0'>
+          <div className='flex flex-row w-full m-auto lg:m-0 lg:w-fit pb-4 lg:pb-6 justify-center items-center'>
+            <h3 className='pr-0 lg:pr-2 text-2xl hidden lg:block font-semibold'>
+              Categories
+            </h3>
             <button
-              key={category}
               className={`${
-                selectedFilters.category === category
-                  ? 'text-black font-semibold'
-                  : 'text-gray-500'
-              } font-sans pl-0 lg:pl-1`}
-              onClick={() => handleFilterChange('category', category)}
+                selectedFilters.category === null
+                  ? 'font-semibold text-black'
+                  : 'text-base text-slate-500'
+              } font-sans text-sm pl-0 lg:pl-1 `}
+              onClick={handleAllPlantsFilter}
             >
-              / {category}
+              All Plants
             </button>
+            {['Indoor', 'Outdoor', 'Pet Friendly'].map((category) => (
+              <button
+                key={category}
+                className={`${
+                  selectedFilters.category === category
+                    ? 'text-black font-semibold'
+                    : 'text-gray-500'
+                } font-sans pl-2 lg:pl-1`}
+                onClick={() => handleFilterChange('category', category)}
+              >
+                / {category}
+              </button>
+            ))}
+          </div>
+          <div className="flex flex-row gap-x-2 lg:hidden">
+          {['White', 'Black', 'Gray', 'Blue'].map((color) => (
+            <div className='flex flex-row items-center' key={color}>
+              <div
+                style={{
+                  width: '12px',
+                  height: '12px',
+                  backgroundColor: color.toLowerCase(),
+                }}
+              />
+              <button
+                className={`${
+                  selectedFilters.color === color
+                    ? 'text-black font-semibold'
+                    : 'text-gray-500'
+                } font-sans pl-2  text-[13px]`}
+                onClick={() => handleFilterChange('color', color)}
+              >
+                {color}
+              </button>
+            </div>
           ))}
+          </div>
         </div>
         <div className='hidden lg:flex flex-row justify-center items-center px-2 py-1 border mr-5 border-slate-400'>
           <input
@@ -192,7 +221,6 @@ if (isLoading) {
       </section>
       <Advert />
       <Footer />
-
     </>
   )
 }
