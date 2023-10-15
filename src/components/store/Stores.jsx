@@ -21,6 +21,7 @@ const Store = () => {
   })
   const [searchQuery, setSearchQuery] = useState('')
   const [resetAnimation, setResetAnimation] = useState(false)
+ const [sortingPlants, setSortingPlants] = useState('none')
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -38,6 +39,7 @@ if (isLoading) {
   }
 
   const handleAllPlantsFilter = () => {
+
     setSelectedFilters({
       color: null,
       category: null,
@@ -45,8 +47,19 @@ if (isLoading) {
       careLevel: null,
     })
   }
+ const sortingFunction=(order)=>{
+  setSortingPlants(order)
+ }
+
 
   const filteredPlants = plantsData.filter((plant) => {
+        const filterendandsortingplants=plantsData
+    if(sortingPlants === 'asc'){
+      filterendandsortingplants.sort((a, b)=>a.price - b.price)
+    } else if(sortingPlants === 'desc'){
+      filterendandsortingplants.sort((a, b)=> b.price - a.price)
+    }
+  
     const { color, category, potSize, careLevel } = selectedFilters
 
     const matchesSearch =
@@ -60,6 +73,7 @@ if (isLoading) {
     const matchesCareLevel = !careLevel || plant.careLevel === careLevel
 
     return ( 
+      filterendandsortingplants &&
       matchesSearch &&
       matchesColor &&
       matchesCategory &&
@@ -73,15 +87,35 @@ if (isLoading) {
       <CentralTitle title={'Our Store'} />
       <div className='flex flex-row w-[90%] m-auto justify-between 2xl:justify-between items-center'>
         <div className='flex flex-col justify-center lg:justify-start items-center m-auto lg:m-0'>
-          <div className='lg:hidden flex flex-row justify-between items-center px-2 py-1 border m-auto border-slate-400 mb-3 w-full'>
-            <input
-              className='border-none outline-none text-slate-600 text-sm bg-transparent'
-              type='text'
-              value={searchQuery}
-              onChange={handleSearchInputChange}
-              placeholder='Search'
-            />
-            <BsSearch className='text-slate-500' />
+          <div className='flex flex-row '>
+            <div className='lg:hidden flex flex-row justify-between items-center px-2 py-1 border border-slate-400 mb-3 w-full'>
+              <input
+                className='border-none outline-none text-slate-600 text-sm bg-transparent'
+                type='text'
+                value={searchQuery}
+                onChange={handleSearchInputChange}
+                placeholder='Search'
+              />
+              <BsSearch className='text-slate-500' />
+            </div>
+          </div>
+          <div className='pt-1 lg:hidden'>
+            <select
+              id='sortOrder'
+              value={sortingPlants}
+              onChange={(e) => sortingFunction(e.target.value)}
+              className='text-gray-600 text-md tracking-wide border border-gray-500 bg-transparent py-1 px-1 cursor-pointer mb-4'
+            >
+              <option className='text-xs md:text-md' value='none'>
+                Sort By
+              </option>
+              <option className='text-xs md:text-md' value='asc'>
+                Price Low to High
+              </option>
+              <option className='text-xs md:text-md' value='desc'>
+                Price High to Low
+              </option>
+            </select>
           </div>
           <div className='flex flex-row w-full m-auto lg:m-0 lg:w-fit pb-4 lg:pb-6 justify-center items-center'>
             <h3 className='pr-0 lg:pr-2 text-2xl hidden lg:block font-semibold'>
@@ -135,15 +169,41 @@ if (isLoading) {
             ))}
           </div>
         </div>
-        <div className='hidden lg:flex flex-row justify-center items-center px-2 py-1 border mr-5 border-slate-400'>
-          <input
-            className='border-none outline-none text-slate-600 text-sm bg-transparent'
-            type='text'
-            value={searchQuery}
-            onChange={handleSearchInputChange}
-            placeholder='Search'
-          />
-          <BsSearch className='text-slate-500' />
+        <div className='hidden lg:flex flex-row gap-4'>
+          <div className='lg:pl-2 pt-2 lg:pt-0'>
+            <label
+              htmlFor='sortOrder'
+              className='text-gray-500 text-md tracking-wide font-bold pr-2'
+            >
+              Sort by:
+            </label>
+            <select
+              id='sortOrder'
+              value={sortingPlants}
+              onChange={(e) => sortingFunction(e.target.value)}
+              className='text-gray-600 text-md tracking-wide border border-gray-500 bg-transparent py-1 px-1 cursor-pointer'
+            >
+              <option className='text-xs md:text-md' value='none'>
+                select
+              </option>
+              <option className='text-xs md:text-md' value='asc'>
+                Price Low to High
+              </option>
+              <option className='text-xs md:text-md' value='desc'>
+                Price High to Low
+              </option>
+            </select>
+          </div>
+          <div className='flex flex-row justify-center items-center px-2 py-1 border mr-5 border-slate-600'>
+            <input
+              className='border-none outline-none text-slate-600 text-sm bg-transparent'
+              type='text'
+              value={searchQuery}
+              onChange={handleSearchInputChange}
+              placeholder='Search'
+            />
+            <BsSearch className='text-slate-500' />
+          </div>
         </div>
       </div>
 
