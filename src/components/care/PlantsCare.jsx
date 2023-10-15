@@ -56,28 +56,49 @@ const PlantsCare = () => {
         </Link>
       </div>
       <CentralTitle title={'Important Care Tools'} />
-      <div className='flex flex-row w-[75%] m-auto items-center justify-center lg:justify-between mb-5'>
+      <div className='lg:hidden flex flex-row justify-between w-[75%] items-center px-2 py-1 border m-auto border-slate-400 mb-5 '>
+        <input
+          className='border-none outline-none text-slate-600 text-sm bg-transparent'
+          type='text'
+          value={searchQuery}
+          onChange={handleSearchInputChange}
+          placeholder='Search'
+        />
+        <BsSearch className='text-slate-500' />
+      </div>
+      <div className='flex flex-row w-[75%] m-auto items-center justify-center lg:justify-between mb-2 lg:mb-5'>
         <div className='flex flex-row gap-4 bg-amber-100 p-3 rounded-lg '>
           <button
-            className={`${selectedCategoryFilter === 'pot' ? 'font-bold' : 'font-normal'}`}
+            className={`${
+              selectedCategoryFilter === 'pot' ? 'font-bold' : 'font-normal'
+            }`}
             onClick={() => handleCategoryFilter('pot')}
           >
-            Pots 
+            Pots
           </button>
           <button
-            className={`${selectedCategoryFilter === 'tool' ? 'font-bold' : 'font-normal'}`}
+            className={`${
+              selectedCategoryFilter === 'tool' ? 'font-bold' : 'font-normal'
+            }`}
             onClick={() => handleCategoryFilter('tool')}
           >
-            Tools 
+            Tools
           </button>
           <button
-            className={`${selectedCategoryFilter === 'supply' ? 'font-bold' : 'font-normal'}`}
+            className={`${
+              selectedCategoryFilter === 'supply' ? 'font-bold' : 'font-normal'
+            }`}
             onClick={() => handleCategoryFilter('supply')}
           >
             Supplies |
           </button>
-          <button className={`${selectedCategoryFilter === null ? 'font-bold' : 'font-normal'}`} onClick={handleAllFilter}>
-            All 
+          <button
+            className={`${
+              selectedCategoryFilter === null ? 'font-bold' : 'font-normal'
+            }`}
+            onClick={handleAllFilter}
+          >
+            All
           </button>
         </div>
         <div className='hidden lg:flex items-center py-3 px-2 bg-amber-100 rounded-lg'>

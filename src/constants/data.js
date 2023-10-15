@@ -173,7 +173,7 @@ export const plantsData = [
     id: 1,
     img: white7,
     photos: [white7, white7_1, white7_2],
-    title: 'Money Three',
+    title: 'Bromeliad Three',
     stars: 70,
     position: 'discounted',
     ExPrice: 175.0,
@@ -183,13 +183,13 @@ export const plantsData = [
     potSize: '12.5-15cm',
     careLevel: 'hard',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'A colorful and low-maintenance air plant, the Bromeliad Summer is a striking houseplant that adds warmth to your home. With a bright and cheery magenta flower, this bromeliad is pet-friendly and makes for a great gift for any plant lover or beginner plant parent.',
   },
   {
     id: 2,
     img: black1,
     photos: [black1, black1_1, black1_2],
-    title: 'Brome Guzmania',
+    title: 'Prickly Cactus',
     stars: 46,
     position: 'discounted',
     price: 45.0,
@@ -199,13 +199,13 @@ export const plantsData = [
     potSize: '12.5-15cm',
     careLevel: 'hard',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'A playful cactus with pads shaped like a beavertail, the Prickly Pear Cactus is a low-maintenance plant with a no-fuss care routine with infrequent watering and fertilizing.',
   },
   {
     id: 3,
     img: gray1,
     photos: [gray1, gray1_1, gray1_2],
-    title: 'Hoya Heart',
+    title: 'Aglaonema Siam',
     price: 75.0,
     stars: 78,
     position: 'bestSellers',
@@ -214,13 +214,13 @@ export const plantsData = [
     potSize: '12.5-15cm',
     careLevel: 'easy',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'A hardy and gorgeous plant, the Aglaonema Siam features light pink stems and glossy leaves mottled with reds, pinks, and greens. These stunning colors vary depending on the amount of sunlight it gets. Adaptable to a wide range of lighting conditions, it can thrive in nearly any spot within a home.',
   },
   {
     id: 4,
     img: blue11,
     photos: [blue11, gift1, blue11_1],
-    title: 'Cat Palm',
+    title: 'Neon Plant',
     stars: 28,
     position: 'discounted',
     price: 66.0,
@@ -229,14 +229,13 @@ export const plantsData = [
     color: 'Blue',
     potSize: '16cm',
     careLevel: 'moderate',
-    description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+    description: 'Vibrant and bright with patterned, neon green leaves.',
   },
   {
     id: 5,
     img: blue1,
     photos: [blue1, blue1_1, blue1_2],
-    title: 'Guzmania',
+    title: 'Blue Star Fern',
     price: 75.0,
     stars: 69,
     position: 'bestSellers',
@@ -245,13 +244,13 @@ export const plantsData = [
     potSize: '15-19cm',
     careLevel: 'moderate',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'The dramatic leaf shape of the Blue Star Fern lends a unique texture with a soft blue-green color. An easy-care houseplant, this fern can adapt to any level of indirect sunlight and does not require added humidity to thrive. Encourage new fronds to grow by keeping it trimmed and well-watered.',
   },
   {
     id: 6,
     img: white2,
     photos: [white2, white2_1, white2_2],
-    title: 'Peace Lily',
+    title: 'Money Tree',
     price: 75.0,
     stars: 7,
     position: 'New',
@@ -260,7 +259,7 @@ export const plantsData = [
     potSize: '20-22cm',
     careLevel: 'hard',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'Popular for its use in Feng Shui, the Money Tree is a pet-friendly and air-purifying plant with large star-shaped leaves and a braided trunk to give your home a tropical feel.',
   },
   {
     id: 7,
@@ -276,13 +275,13 @@ export const plantsData = [
     potSize: '20-22cm',
     careLevel: 'moderate',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'It doesn’t get much easier than the Easy Peasy Collection. This group of three low-maintenance and drought tolerant plants make plant care a breeze and look charming at the same time. This trio, including the Ponytail Palm, Sansevieria Hahnii, and the Sansevieria Laurentii Superba, makes a great gift for the beginner plant parent in your life. Water these plants only once the soil is fully dry and they will flourish.',
   },
   {
     id: 8,
     img: black2,
     photos: [black2, black2_1, black2_2],
-    title: 'Stroman Triostar',
+    title: 'Fiddle Leaf Fig',
     stars: 33,
     position: 'discounted',
     price: 69.0,
@@ -292,13 +291,13 @@ export const plantsData = [
     potSize: '16cm',
     careLevel: 'easy',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'Tall, sculptural, and dramatic. This plant will flourish in the right conditions.',
   },
   {
     id: 9,
     img: black4,
     photos: [black4, black4_1, black4_2],
-    title: 'Leaf Fig',
+    title: 'Fin Sansevieria',
     stars: 78,
     position: 'discounted',
     price: 60.0,
@@ -308,7 +307,7 @@ export const plantsData = [
     potSize: '20-22cm',
     careLevel: 'easy',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'Making a huge statement with just one leaf, the Whale Fin Sansevieria is quite the standout among houseplants. These Sansevierias do well with infrequent waterings and can tolerate low to indirect bright light. Dust regularly to deter pests and keep the unique dappled pattern looking its best.',
   },
 
   {
@@ -325,13 +324,13 @@ export const plantsData = [
     potSize: '16cm',
     careLevel: 'moderate',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'Easy-going Monstera with striking, fenestrated leaves. Also known as the Swiss Cheese Vine.',
   },
   {
     id: 11,
     img: white4,
     photos: [white4, white4_1, white4_2],
-    title: 'Chinese Palm',
+    title: 'Peasy Collection',
     stars: 48,
     position: 'discounted',
     price: 49.0,
@@ -341,13 +340,13 @@ export const plantsData = [
     potSize: '12.5-15cm',
     careLevel: 'hard',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'It doesn’t get much easier than the Easy Peasy Collection. This group of three low-maintenance and drought tolerant plants make plant care a breeze and look charming at the same time. This trio, including the Ponytail Palm, Sansevieria Hahnii, and the Sansevieria Laurentii Superba, makes a great gift for the beginner plant parent in your life. Water these plants only once the soil is fully dry and they will flourish.',
   },
   {
     id: 12,
     img: black3,
     photos: [black3, black3_1, black3_2],
-    title: 'ZZ Plant',
+    title: 'Jade Plant',
     price: 79.0,
     stars: 67,
     position: 'bestSellers',
@@ -356,13 +355,13 @@ export const plantsData = [
     potSize: '12.5-15cm',
     careLevel: 'moderate',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'Jade Plants are one of the most beloved succulents. This easy to care for, long-lasting plant can be passed down for generations, becoming your own family heirloom. Keep in indirect to bright light and water only when the soil is completely dry. Keep this plant’s round leaves pest-free by dusting regularly.',
   },
   {
     id: 13,
     img: blue2,
     photos: [blue2, gray2_1, gray2_2],
-    title: 'Paradise Bird',
+    title: 'Peasy ZZ',
     price: 75.0,
     stars: 56,
     position: 'bestSellers',
@@ -371,13 +370,13 @@ export const plantsData = [
     potSize: '12.5-15cm',
     careLevel: 'hard',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'It doesn’t get much easier than the Easy Peasy Collection. This group of three low-maintenance and drought tolerant plants make plant care a breeze and look charming at the same time. This trio, including the Ponytail Palm, Sansevieria Hahnii, and the Sansevieria Laurentii Superba, makes a great gift for the beginner plant parent in your life. Water these plants only once the soil is fully dry and they will flourish.',
   },
   {
     id: 14,
     img: blue3,
     photos: [blue3, blue3_1, blue3_2],
-    title: 'Money Tree',
+    title: 'Pothos Collection',
     price: 69.0,
     stars: 55,
     position: 'bestSellers',
@@ -386,13 +385,13 @@ export const plantsData = [
     potSize: '16cm',
     careLevel: 'easy',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'This adorable and lively trio of pothos is ready to sit front and center on your shelf or windowsill. The Pothos Collection consists of the Pearls & Jade, Marble Queen, and Golden Pothos, each with its own striking variegation. Happiest in bright indirect light, this group of easy, trailing plants makes for a thoughtful gift or a stunning addition to your own collection.',
   },
   {
     id: 15,
     img: blue4,
     photos: [blue4, blue4_1, blue4_2],
-    title: 'Sansevieria',
+    title: 'Fiddle Leaf',
     price: 79.0,
     stars: 71,
     position: 'bestSellers',
@@ -401,13 +400,13 @@ export const plantsData = [
     potSize: '15-19cm',
     careLevel: 'moderate',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'Tall, sculptural, and dramatic. This plant will flourish in the right conditions.',
   },
   {
     id: 16,
     img: white6,
     photos: [white6, white6_1, white6_2],
-    title: 'Ficus Ginseng',
+    title: 'Hoya Heart',
     stars: 24,
     position: 'discounted',
     price: 39.0,
@@ -417,7 +416,7 @@ export const plantsData = [
     potSize: '15-19cm',
     careLevel: 'hard',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      ' Expect to water more often in brighter light and less often in lower light. This is a pet friendly plant. The Hoya kerrii is commonly referred to as the Hoya Heart because of its heart shaped leaves.',
   },
   {
     id: 17,
@@ -433,7 +432,7 @@ export const plantsData = [
     potSize: '15-19cm',
     careLevel: 'hard',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'A hardy and gorgeous plant, the Aglaonema Siam features light pink stems and glossy leaves mottled with reds, pinks, and greens. These stunning colors vary depending on the amount of sunlight it gets. Adaptable to a wide range of lighting conditions, it can thrive in nearly any spot within a home.',
   },
   {
     id: 18,
@@ -447,14 +446,13 @@ export const plantsData = [
     color: 'Black',
     potSize: '15-19cm',
     careLevel: 'moderate',
-    description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+    description: 'Vibrant and bright with patterned, neon green leaves.',
   },
   {
     id: 19,
     img: black6,
     photos: [black6, black6_1, black6_2],
-    title: 'Summer Plant',
+    title: 'Money Braid',
     stars: 73,
     position: 'new',
     price: 79.0,
@@ -463,7 +461,7 @@ export const plantsData = [
     potSize: '16cm',
     careLevel: 'moderate',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'The Money Tree is the perfect low-care indoor plant to bring a tropical feel with a touch of good fortune. With its intricately braided trunk and bright green, palm-like leaves, it looks both like a tree and a palm. The Money Tree gets its name in part from the natural Feng Shui this plant gives. It’s believed this plant will bring positive energy and good luck to the owner. The gorgeous Money Tree makes for a meaningful gift or your own good luck charm.',
   },
   {
     id: 20,
@@ -479,13 +477,13 @@ export const plantsData = [
     potSize: '20-22cm',
     careLevel: 'easy',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'If you’re new to the indoor plant game or are simply looking for an easy-care houseplant, the Sansevieria is the plant for you. This hardy plant is renowned for its adaptability and its classic sword-like leaves. While it does best in bright indirect sunlight, it can truly withstand all light levels from full sun to low light. The Sansevieria is also drought tolerant, making it able to take a little neglect. Keep its sturdy leaves dust-free by wiping them regularly.',
   },
   {
     id: 21,
     img: white9,
     photos: [white9, white9_1, white9_2],
-    title: 'Felicity',
+    title: 'Red Anthurium',
     stars: 23,
     position: 'New',
     price: 68.0,
@@ -494,7 +492,7 @@ export const plantsData = [
     potSize: '16cm',
     careLevel: 'moderate',
     description:
-      'With shimmering sage-green leaves, the olive tree is ready to add delicate color and texture to your home decor. Hailing from the Mediterranean, this graceful plant will need plenty of bright, direct sunlight to thrive (think sunny, south-facing windows.',
+      'With its large, bold heart-shaped flower, the Red Anthurium symbolizes hospitality, luck, and strong relationships, bringing instant happiness and abundance to any home. It can be given as a sentimental gift or added to your own collection for a splash of color. These tropical plants will thrive year-round, in a warm bright spot. Provide extra humidity with a mister to keep the leaves looking their best.',
   },
   {
     id: 22,

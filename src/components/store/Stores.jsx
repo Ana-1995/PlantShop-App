@@ -59,7 +59,7 @@ if (isLoading) {
     const matchesPotSize = !potSize || plant.potSize === potSize
     const matchesCareLevel = !careLevel || plant.careLevel === careLevel
 
-    return (
+    return ( 
       matchesSearch &&
       matchesColor &&
       matchesCategory &&
@@ -72,7 +72,17 @@ if (isLoading) {
     <>
       <CentralTitle title={'Our Store'} />
       <div className='flex flex-row w-[90%] m-auto justify-between 2xl:justify-between items-center'>
-        <div className='flex flex-col  justify-center lg:justify-start items-center m-auto lg:m-0'>
+        <div className='flex flex-col justify-center lg:justify-start items-center m-auto lg:m-0'>
+          <div className='lg:hidden flex flex-row justify-between items-center px-2 py-1 border m-auto border-slate-400 mb-3 w-full'>
+            <input
+              className='border-none outline-none text-slate-600 text-sm bg-transparent'
+              type='text'
+              value={searchQuery}
+              onChange={handleSearchInputChange}
+              placeholder='Search'
+            />
+            <BsSearch className='text-slate-500' />
+          </div>
           <div className='flex flex-row w-full m-auto lg:m-0 lg:w-fit pb-4 lg:pb-6 justify-center items-center'>
             <h3 className='pr-0 lg:pr-2 text-2xl hidden lg:block font-semibold'>
               Categories
@@ -101,28 +111,28 @@ if (isLoading) {
               </button>
             ))}
           </div>
-          <div className="flex flex-row gap-x-2 lg:hidden">
-          {['White', 'Black', 'Gray', 'Blue'].map((color) => (
-            <div className='flex flex-row items-center' key={color}>
-              <div
-                style={{
-                  width: '12px',
-                  height: '12px',
-                  backgroundColor: color.toLowerCase(),
-                }}
-              />
-              <button
-                className={`${
-                  selectedFilters.color === color
-                    ? 'text-black font-semibold'
-                    : 'text-gray-500'
-                } font-sans pl-2  text-[13px]`}
-                onClick={() => handleFilterChange('color', color)}
-              >
-                {color}
-              </button>
-            </div>
-          ))}
+          <div className='flex flex-row gap-x-2 lg:hidden'>
+            {['White', 'Black', 'Gray', 'Blue'].map((color) => (
+              <div className='flex flex-row items-center' key={color}>
+                <div
+                  style={{
+                    width: '12px',
+                    height: '12px',
+                    backgroundColor: color.toLowerCase(),
+                  }}
+                />
+                <button
+                  className={`${
+                    selectedFilters.color === color
+                      ? 'text-black font-semibold'
+                      : 'text-gray-500'
+                  } font-sans pl-2  text-[13px]`}
+                  onClick={() => handleFilterChange('color', color)}
+                >
+                  {color}
+                </button>
+              </div>
+            ))}
           </div>
         </div>
         <div className='hidden lg:flex flex-row justify-center items-center px-2 py-1 border mr-5 border-slate-400'>
