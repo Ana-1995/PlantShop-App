@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 const CareIntro = () => {
   return (
-    <section className='pt-10 w-full h-auto mb-3 lg:mb-8 bg-[#d0ebd0] '>
-      <div className='flex flex-row  gap-0 lg:gap-6  w-[90%] pt-0 lg:pt-5 pb-3 m-auto justify-around items-start flex-wrap'>
+    <section className='pt-4 w-full h-auto mb-3 lg:mb-8 bg-[#d0ebd0] '>
+      <div className='flex flex-row gap-0 lg:gap-6 w-[90%] lg:pt-5 pb-3 m-auto justify-around items-start flex-wrap'>
         <div className='h-[1px] w-full bg-neutral-400 mb-4 lg:mb-0' />
         <div className='flex flex-col lg:flex-[0.5] '>
           <h3 className='text-2xl text-center lg:text-start md:text-3xl lg:text-3xl 2xl:text-4xl font-bold text-green-900 tracking-wide '>
@@ -31,13 +31,13 @@ const CareIntro = () => {
         <div className='flex flex-1 lg:flex-[0.8]'>
           <img
             src={indoorHome}
-            className='rounded-md pt-10  lg:pt-0'
+            className='rounded-md pt-10 lg:pt-0'
             alt='indoor plants care'
           />
         </div>
       </div>
 
-      <div className='flex flex-row gap-0 lg:gap-6 w-[90%] mt-3 lg:mt-8 pt-0 lg:pt-6 pb-12 m-auto justify-around items-start flex-wrap'>
+      <div className='flex flex-row lg:gap-6 w-[90%] mt-3 lg:mt-8 lg:pt-6 pb-12 m-auto justify-around items-start flex-wrap'>
         <div className='h-[1px] w-full bg-neutral-400' />
         <div className='flex flex-1 lg:flex-[0.8]'>
           <img

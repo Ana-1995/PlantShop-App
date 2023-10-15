@@ -40,7 +40,7 @@ const MainNav = () => {
     0
   )
   return (
-    <div className='flex justify-between items-center w-full py-[13px] px-5 bg-yellow-50 text-green-800 font-bold'>
+    <div className='flex justify-between items-center w-full py-3 px-5 bg-yellow-50 text-green-800 font-bold'>
       <div className='flex justify-start items-center' id='mainNav'>
         <Link to={'/'}>
           <img
@@ -56,7 +56,7 @@ const MainNav = () => {
           to={'/'}
           className={({ isActive }) => (isActive ? activeLink : normalLink)}
         >
-          <li className='cursor-pointer mx-5  hover:text-[#0C0C0C]'>Home</li>
+          <li className='cursor-pointer mx-5 hover:text-[#0C0C0C]'>Home</li>
         </NavLink>
 
         <li
@@ -68,7 +68,7 @@ const MainNav = () => {
             to='/stores'
             className={({ isActive }) => (isActive ? activeLink2 : normalLink)}
           >
-            <span className='flex flex-row justify-center items-center pr-0 pl-0 lg:pl-2 lg:pr-2'>
+            <span className='flex flex-row justify-center items-center lg:pl-2 lg:pr-2'>
               Plants <MdKeyboardArrowDown className='hidden lg:block' />
             </span>
           </NavLink>
@@ -86,7 +86,7 @@ const MainNav = () => {
           to={'/gifts'}
           className={({ isActive }) => (isActive ? activeLink : normalLink)}
         >
-          <li className='cursor-pointer  mx-5 hover:text-[#000] '>Gifts</li>
+          <li className='cursor-pointer mx-5 hover:text-[#000] '>Gifts</li>
         </NavLink>
 
         <NavLink
@@ -106,7 +106,7 @@ const MainNav = () => {
 
       <div className='hidden md:flex justify-end items-center text-1xl'>
         <Link
-          className='my-0 mx-[0.3rem] ease-in duration-300 hover:text-[#000]'
+          className='my-0 mx-1 ease-in duration-300 hover:text-[#000]'
           to={'/login'}
         >
           <AiOutlineUser size={25} />
@@ -116,7 +116,7 @@ const MainNav = () => {
           to={'/cart'}
         >
           
-          <BsCart />
+          <BsCart size={22} />
           {totalQuantity > 0 && (
             <span className='absolute bottom-3 left-2 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-sans'>
               {totalQuantity}

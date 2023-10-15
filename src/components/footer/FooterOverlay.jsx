@@ -14,12 +14,12 @@ const FooterOverlay = () => {
           </p>
           <form className='pt-3 lg:pt-6 flex flex-row gap-1 lg:gap-4'>
             <input
-              className='max-w-[100px] max-h-[35px] sm:h-auto lg:max-w-[280px] py-2 px-3 border border-solid border-slate-600  rounded-md bg-[#C0C0C0] text-black placeholder-black'
+              className='max-w-[100px] max-h-[35px] sm:h-auto lg:max-w-[280px] py-2 px-3 border border-solid border-slate-600 rounded-md bg-[#C0C0C0] text-black placeholder-black'
               type='text'
               placeholder='name'
             />
             <input
-              className='max-w-[100px] max-h-[35px] sm:h-auto lg:max-w-[280px] py-2 px-3 border border-solid border-slate-600  rounded-md bg-[#C0C0C0] text-black placeholder-black'
+              className='max-w-[100px] max-h-[35px] sm:h-auto lg:max-w-[280px] py-2 px-3 border border-solid border-slate-600 rounded-md bg-[#C0C0C0] text-black placeholder-black'
               type='email'
               placeholder='email'
             />

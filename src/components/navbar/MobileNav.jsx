@@ -15,7 +15,7 @@ const MobileNav = () => {
     0
   )
   return (
-    <div className='mob__nav pb-2 pt-2 px-2 md:pt-4 md:pb-4 bg-gradient-to-r from-yellow-50 to-yellow-100 '>
+    <div className='mob__nav py-2 px-2 md:py-3 bg-gradient-to-r from-yellow-50 to-yellow-100 '>
       <div className='flex items-center justify-between '>
         <Link to={'/'}>
           <img
@@ -27,7 +27,7 @@ const MobileNav = () => {
 
         <div className='flex items-center'>
           <Link
-            className='my-0 mx-[0.3rem] ease-in duration-300 hover:text-[#000]'
+            className='my-1 mx-1 ease-in duration-300 hover:text-[#000]'
             to={'/login'}
           >
             <AiOutlineUser size={25} />
@@ -37,7 +37,7 @@ const MobileNav = () => {
              
               <BsCart />
               {totalQuantity > 0 && (
-                <span className=' absolute bottom-2 left-2 bg-green-600 text-white px-2 py-[2px] rounded-full text-xs font-sans'>
+                <span className=' absolute bottom-2 left-2 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-sans'>
                   {totalQuantity}
                 </span>
               )}

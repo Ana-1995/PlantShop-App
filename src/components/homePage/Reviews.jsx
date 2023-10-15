@@ -67,7 +67,7 @@ const Reviews = () => {
             />
           ))}
         </div>
-        <div className='w-full flex justify-end items-center py-0 px-[0.2rem] absolute bottom-5 right-4'>
+        <div className='w-full flex justify-end items-center py-0 px-1 absolute bottom-5 right-4'>
           <FaChevronLeft
             className='text-green-600 text-[1rem] lg:text-[1.6rem] cursor-pointer rounded-md'
             onClick={() => scroll('left')}
@@ -78,7 +78,7 @@ const Reviews = () => {
           />
         </div>
       </div>
-      <div className='flex justify-center items-center my-0 lg:my-6'>
+      <div className='flex justify-center items-center lg:my-6'>
         <Link
           to='/stores'
           className='cursor-pointer text-center py-2 px-3 bg-green-600 text-white'

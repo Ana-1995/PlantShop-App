@@ -69,11 +69,11 @@ const BestSellers = () => {
           </div>
           <div className='w-full m-auto flex justify-between items-center absolute bottom-[46%]'>
             <FaChevronLeft
-              className='text-white text-2xl lg:text-5xl cursor-pointer py-1 lg:py-2  bg-green-800'
+              className='text-white text-2xl lg:text-5xl cursor-pointer py-1 lg:py-2 bg-green-800'
               onClick={() => scroll('left')}
             />
             <FaChevronRight
-              className='text-white text-2xl lg:text-5xl cursor-pointer py-1 lg:py-2  bg-green-800 '
+              className='text-white text-2xl lg:text-5xl cursor-pointer py-1 lg:py-2 bg-green-800 '
               onClick={() => scroll('right')}
             />
           </div>
