@@ -67,7 +67,7 @@ if (isLoading) {
     const matchesSearch =
       !searchQuery ||
       plant.title.toLowerCase().includes(searchQuery.toLowerCase())
-      
+
     const matchesColor = !color || plant.color === color
     const matchesCategory = !category || plant.category === category
     const matchesPotSize = !potSize || plant.potSize === potSize
@@ -100,15 +100,16 @@ if (isLoading) {
               <BsSearch className='text-slate-500' />
             </div>
           </div>
-          <div className='pt-1 lg:hidden'>
+          <div className='pt-1 lg:hidden mb-3'>
+
             <select
               id='sortOrder'
               value={sortingPlants}
               onChange={(e) => sortingFunction(e.target.value)}
-              className='text-gray-600 text-md tracking-wide border border-gray-500 bg-transparent py-1 px-1 cursor-pointer mb-4'
+              className='text-gray-600 text-md tracking-wide border border-gray-500 bg-transparent py-1 px-1 cursor-pointer'
             >
               <option className='text-xs md:text-md' value='none'>
-                Sort By
+                select
               </option>
               <option className='text-xs md:text-md' value='asc'>
                 Price Low to High
