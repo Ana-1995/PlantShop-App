@@ -21,7 +21,7 @@ const Store = () => {
   })
   const [searchQuery, setSearchQuery] = useState('')
   const [resetAnimation, setResetAnimation] = useState(false)
- const [sortingPlants, setSortingPlants] = useState('none')
+ const [sortingPlants, setSortingPlants] = useState('asc')
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -45,8 +45,7 @@ if (isLoading) {
       potSize: null,
       careLevel: null,
     })
-    // Reset the sorting to its default state
-    setSortingPlants('none')
+
   }
 
   const sortingFunction = (order) => {
@@ -108,9 +107,6 @@ if (isLoading) {
               onChange={(e) => sortingFunction(e.target.value)}
               className='text-gray-600 text-md tracking-wide border border-gray-500 bg-transparent py-1 px-1 cursor-pointer'
             >
-              <option className='text-xs md:text-md' value='none'>
-                select
-              </option>
               <option className='text-xs md:text-md' value='asc'>
                 Price Low to High
               </option>
