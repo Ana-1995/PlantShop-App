@@ -39,40 +39,41 @@ if (isLoading) {
   }
 
   const handleAllPlantsFilter = () => {
-
     setSelectedFilters({
       color: null,
       category: null,
       potSize: null,
       careLevel: null,
     })
+    // Reset the sorting to its default state
+    setSortingPlants('none')
   }
- const sortingFunction=(order)=>{
-  setSortingPlants(order)
- }
 
+  const sortingFunction = (order) => {
+    setSortingPlants(order)
+  }
 
   const filteredPlants = plantsData.filter((plant) => {
-        const filterendandsortingplants=plantsData
-    if(sortingPlants === 'asc'){
-      filterendandsortingplants.sort((a, b)=>a.price - b.price)
-    } else if(sortingPlants === 'desc'){
-      filterendandsortingplants.sort((a, b)=> b.price - a.price)
-    }
-  
-    const { color, category, potSize, careLevel } = selectedFilters
+    const filterendandsortingplants = plantsData.sort((a, b) => {
+      if (sortingPlants === 'asc') {
+        return a.price - b.price
+      } else if (sortingPlants === 'desc') {
+        return b.price - a.price
+      }
+      return 0
+    })
 
+    const { color, category, potSize, careLevel } = selectedFilters
     const matchesSearch =
       !searchQuery ||
-      plant.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      plant.category.toLowerCase().includes(searchQuery.toLowerCase())
-
+      plant.title.toLowerCase().includes(searchQuery.toLowerCase())
+      
     const matchesColor = !color || plant.color === color
     const matchesCategory = !category || plant.category === category
     const matchesPotSize = !potSize || plant.potSize === potSize
     const matchesCareLevel = !careLevel || plant.careLevel === careLevel
 
-    return ( 
+    return (
       filterendandsortingplants &&
       matchesSearch &&
       matchesColor &&

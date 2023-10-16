@@ -8,77 +8,110 @@ import { plantsData } from '../../constants/data'
 import Footer from '../footer/Footer'
 
 const Indoor = () => {
-  const [isLoading, setIsLoading] = useState(true)
-  const [selectedFilters, setSelectedFilters] = useState({
-    color: null,
-    category: null,
-    potSize: null,
-    careLevel: null,
-  })
-  const [searchQuery, setSearchQuery] = useState('')
- const [resetAnimation, setResetAnimation] = useState(false)
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false)
-      setResetAnimation(true)
-    }, 1200)
-  }, [])
+   const [isLoading, setIsLoading] = useState(true)
+   const [sortingPlants, setSortingPlants] = useState('none')
+   const [selectedFilters, setSelectedFilters] = useState({
+     color: null,
+     category: null,
+     potSize: null,
+     careLevel: null,
+   })
+   const [searchQuery, setSearchQuery] = useState('')
+   const [resetAnimation, setResetAnimation] = useState(false)
+
+   useEffect(() => {
+     setTimeout(() => {
+       setIsLoading(false)
+       setResetAnimation(true)
+     }, 1200)
+   }, [])
+
    if (isLoading) {
      return <Loader />
    }
 
-  const handleFilterChange = (filterName, value) => {
-    setSelectedFilters({ ...selectedFilters, [filterName]: value })
-  }
+   const handleFilterChange = (filterName, value) => {
+     setSelectedFilters({ ...selectedFilters, [filterName]: value })
+   }
 
-  const filteredPlants = plantsData.filter((plant) => {
-    const { color, potSize, careLevel } = selectedFilters
+   const handleSortingChange = (order) => {
+     setSortingPlants(order)
+   }
 
-    return (
-      (color ? plant.color === color : true) &&
-      (potSize ? plant.potSize === potSize : true) &&
-      (careLevel ? plant.careLevel === careLevel : true) &&
-      (searchQuery
-        ? plant.title.toLowerCase().includes(searchQuery.toLowerCase()) 
-        : true) &&
-      plant.category === 'Indoor' 
-    )
-  })
+   const filteredPlants = plantsData
+     .filter((plant) => {
+       const { color, potSize, careLevel } = selectedFilters
+       return (
+         (color ? plant.color === color : true) &&
+         (potSize ? plant.potSize === potSize : true) &&
+         (careLevel ? plant.careLevel === careLevel : true) &&
+         (searchQuery
+           ? plant.title.toLowerCase().includes(searchQuery.toLowerCase())
+           : true) &&
+         plant.category === 'Indoor'
+       )
+     })
+     .sort((a, b) => {
+       if (sortingPlants === 'asc') {
+         return a.price - b.price
+       } else if (sortingPlants === 'desc') {
+         return b.price - a.price
+       }
+       return 0
+     })
 
-  const resetFilters = () => {
-    setSelectedFilters({
-      color: null,
-      category: null,
-      potSize: null,
-      careLevel: null,
-    })
-  }
+   const resetFilters = () => {
+     setSelectedFilters({
+       color: null,
+       category: null,
+       potSize: null,
+       careLevel: null,
+     })
+   }
 
   return (
     <>
       <CentralTitle title={'Indoor Plants'} />
       <div className='flex flex-row w-[90%] m-auto justify-between items-center'>
-        <div className='flex flex-row w-full m-auto lg:m-0 lg:w-fit pb-4 lg:pb-6 justify-center items-center'>
+        <div className='flex flex-row w-full lg:w-fit justify-center'>
           <button
-            className='font-sans text-md pl-0 lg:pl-1 text-slate-500 font-semibold bg-green-200 py-1 px-2 rounded-md tracking-wider'
+            className='font-sans text-md text-slate-500 font-semibold bg-green-200 duration-300 hover:bg-green-300 py-1 px-3 rounded-lg tracking-wider'
             onClick={resetFilters}
           >
             All Indoor Plants
           </button>
         </div>
-        <div className='hidden lg:flex flex-row justify-center items-center px-2 py-2 rounded-md mr-0 2xl:mr-12 bg-green-200'>
-          <input
-            className='border-none outline-none text-sm bg-transparent text-slate-600'
-            type='text'
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder='Search'
-          />
-          <BsSearch className='text-slate-500' />
+        <div className='hidden lg:flex items-center'>
+          <select
+            id='sortOrder'
+            value={sortingPlants}
+            onChange={(e) => handleSortingChange(e.target.value)}
+            className='text-slate-500 text-md tracking-wide outline-none bg-green-200 py-[5px] px-1 cursor-pointer rounded-lg'
+          >
+            <option className='text-xs md:text-md' value='none'>
+              Sort By
+            </option>
+            <option className='text-xs md:text-md' value='asc'>
+              Price Low to High
+            </option>
+            <option className='text-xs md:text-md' value='desc'>
+              Price High to Low
+            </option>
+          </select>
+          <div className='hidden lg:flex flex-row justify-center items-center px-2 py-2 rounded-lg mr-0 2xl:mr-12 bg-green-200 ml-3'>
+            <input
+              className='border-none outline-none text-sm bg-transparent text-slate-600'
+              type='text'
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder='Search'
+            />
+            <BsSearch className='text-slate-500' />
+          </div>
         </div>
       </div>
 
-      <section className='w-[95%] lg:w-[98%] xl:w-[90%] m-auto flex flex-row mb-16'>
+      <section className='w-[95%] lg:w-[98%] xl:w-[90%] m-auto flex flex-row mt-8'>
         <div className='flex flex-row'>
           <div className='hidden lg:flex flex-col mr-6 justify-start items-start'>
             <h3 className='font-bold pb-1 text-xl'>Pot Color</h3>
