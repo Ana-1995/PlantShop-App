@@ -73,7 +73,7 @@ const PlantsCare = () => {
           Looking for our plant care basics?
         </Link>
       </div>
-      <CentralTitle title={'Important Care Tools'} />
+      <CentralTitle title={'Main Care Tools'} />
 
       <div className='lg:hidden flex flex-row justify-between w-[75%] items-center px-2 py-1 border m-auto border-slate-400 mb-5 '>
         <input
