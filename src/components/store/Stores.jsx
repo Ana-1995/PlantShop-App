@@ -21,7 +21,7 @@ const Store = () => {
   })
   const [searchQuery, setSearchQuery] = useState('')
   const [resetAnimation, setResetAnimation] = useState(false)
- const [sortingPlants, setSortingPlants] = useState('asc')
+ const [sortingPlants, setSortingPlants] = useState('none')
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -39,48 +39,49 @@ if (isLoading) {
   }
 
   const handleAllPlantsFilter = () => {
+
     setSelectedFilters({
       color: null,
       category: null,
       potSize: null,
       careLevel: null,
     })
-
   }
+ const sortingFunction=(order)=>{
+  setSortingPlants(order)
+ }
 
-  const sortingFunction = (order) => {
-    setSortingPlants(order)
-  }
 
-  const filteredPlants = plantsData.filter((plant) => {
-    const filterendandsortingplants = plantsData.sort((a, b) => {
-      if (sortingPlants === 'asc') {
-        return a.price - b.price
-      } else if (sortingPlants === 'desc') {
-        return b.price - a.price
-      }
-      return 0
-    })
+    const filteredPlants = plantsData
+      .filter((plant) => {
+        const { color, category, potSize, careLevel } = selectedFilters
 
-    const { color, category, potSize, careLevel } = selectedFilters
-    const matchesSearch =
-      !searchQuery ||
-      plant.title.toLowerCase().includes(searchQuery.toLowerCase())
+        const matchesSearch =
+          !searchQuery ||
+          plant.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          plant.category.toLowerCase().includes(searchQuery.toLowerCase())
 
-    const matchesColor = !color || plant.color === color
-    const matchesCategory = !category || plant.category === category
-    const matchesPotSize = !potSize || plant.potSize === potSize
-    const matchesCareLevel = !careLevel || plant.careLevel === careLevel
+        const matchesColor = !color || plant.color === color
+        const matchesCategory = !category || plant.category === category
+        const matchesPotSize = !potSize || plant.potSize === potSize
+        const matchesCareLevel = !careLevel || plant.careLevel === careLevel
 
-    return (
-      filterendandsortingplants &&
-      matchesSearch &&
-      matchesColor &&
-      matchesCategory &&
-      matchesPotSize &&
-      matchesCareLevel
-    )
-  })
+        return (
+          matchesSearch &&
+          matchesColor &&
+          matchesCategory &&
+          matchesPotSize &&
+          matchesCareLevel
+        )
+      })
+      .sort((a, b) => {
+        if (sortingPlants === 'asc') {
+          return a.price - b.price
+        } else if (sortingPlants === 'desc') {
+          return b.price - a.price
+        }
+        return 0
+      })
 
   return (
     <>
@@ -99,14 +100,16 @@ if (isLoading) {
               <BsSearch className='text-slate-500' />
             </div>
           </div>
-          <div className='pt-1 lg:hidden mb-3'>
-
+          <div className='pt-1 lg:hidden'>
             <select
               id='sortOrder'
               value={sortingPlants}
               onChange={(e) => sortingFunction(e.target.value)}
-              className='text-gray-600 text-md tracking-wide border border-gray-500 bg-transparent py-1 px-1 cursor-pointer'
+              className='text-gray-600 text-md tracking-wide border border-gray-500 bg-transparent py-1 px-1 cursor-pointer mb-4'
             >
+              <option className='text-xs md:text-md' value='none'>
+                Sort By
+              </option>
               <option className='text-xs md:text-md' value='asc'>
                 Price Low to High
               </option>
