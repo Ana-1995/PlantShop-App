@@ -105,7 +105,7 @@ const Store = () => {
             <select
               value={sortingPlants}
               onChange={(e) => sortingFunction(e.target.value)}
-              className='text-slate-600 py-1 px-1 text-md border border-t-2 border-slate-500 bg-transparent cursor-pointer'
+              className='text-slate-600 py-1 px-1 text-md border border-slate-500 bg-transparent cursor-pointer'
             >
               <option>Select</option>
               <option value='asc'>Price Low to High</option>
