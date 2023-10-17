@@ -5,7 +5,9 @@ import { useCart } from '../cartContexts/CartContext'
 const Plant = ({id, img, title, price, ExPrice, stars }) => {
   const { addToCart } = useCart()
   const [isClicked, setIsClicked] = useState(false)
+  const [quantity, setQuantity]=useState(0)
   const handleAddToCart = () => {
+    setQuantity(quantity+1)
     addToCart({
       id: id, 
       img,
@@ -31,9 +33,11 @@ const Plant = ({id, img, title, price, ExPrice, stars }) => {
 
         <button
           onClick={handleAddToCart}
-          className={`font-serif absolute cursor-pointer opacity-0 group-hover:opacity-100 text-center ease-in duration-[.3s] transition bottom-0 text-white  w-full font-light text-md lg:text-lg py-1 tracking-wider ${isClicked ? 'bg-green-600' : 'bg-green-800'}`}
+          className={`font-serif absolute cursor-pointer opacity-0 group-hover:opacity-100 text-center ease-in duration-[.3s] transition bottom-0 text-white  w-full font-light text-md lg:text-lg py-1 tracking-wider ${
+            isClicked ? 'bg-green-600' : 'bg-green-800'
+          }`}
         >
-          {isClicked ? 'Added To Cart' : 'Add To Cart'}
+          {isClicked ? `Added To Cart(${quantity})` : 'Add To Cart'}
         </button>
       </div>
       <div className='flex flex-col justify-start text-start mx-3'>
@@ -43,14 +47,14 @@ const Plant = ({id, img, title, price, ExPrice, stars }) => {
         <Stars stars={stars} />
         <p className='flex flex-row'>
           <span className='text-center text-green-800 font-bold font-sans pb-1 pt-0 lg:pt-1 text-lg'>
-            ${price} </span>
-            <span className=' text-green-800 font-normal line-through pt-0 lg:pt-1 pb-1 text-lg pl-2 '>
-              {ExPrice ? `$${ExPrice}` : ''}
-            </span>
-            <span className='text-xs font-normal absolute bottom-2 right-1 hidden lg:block'>
-              Free Shipping
-            </span>
-         
+            ${price}{' '}
+          </span>
+          <span className=' text-green-800 font-normal line-through pt-0 lg:pt-1 pb-1 text-lg pl-2 '>
+            {ExPrice ? `$${ExPrice}` : ''}
+          </span>
+          <span className='text-xs font-normal absolute bottom-2 right-1 hidden lg:block'>
+            Free Shipping
+          </span>
         </p>
       </div>
     </article>
