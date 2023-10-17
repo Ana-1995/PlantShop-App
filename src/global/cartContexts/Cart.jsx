@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useCart } from './CartContext'
 import { Link } from 'react-router-dom'
 import { MdPlayArrow } from 'react-icons/md'
 
 const Cart = () => {
   const { cartItems, addToCart, removeFromCart, clearCart } = useCart()
-
+useEffect(()=>{
+window.scrollTo(0, 0)
+}, [])
   const getTotalPrice = () => {
     const total = cartItems.reduce((acc, item) => {
       const price = parseFloat(item.price)

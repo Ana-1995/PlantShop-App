@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Stars from './Stars'
 import { useCart } from '../cartContexts/CartContext'
 
 const Plant = ({id, img, title, price, ExPrice, stars }) => {
   const { addToCart } = useCart()
-
+  const [isClicked, setIsClicked] = useState(false)
   const handleAddToCart = () => {
     addToCart({
       id: id, 
@@ -14,6 +14,8 @@ const Plant = ({id, img, title, price, ExPrice, stars }) => {
       stars,
       ExPrice,
     })
+    setIsClicked(true)
+  
   }
   return (
     <article
@@ -29,9 +31,9 @@ const Plant = ({id, img, title, price, ExPrice, stars }) => {
 
         <button
           onClick={handleAddToCart}
-          className='font-serif absolute cursor-pointer opacity-0 group-hover:opacity-100 text-center ease-in duration-[.3s] transition bottom-0 text-white bg-green-800 w-full font-light text-md lg:text-lg py-1 tracking-wider'
+          className={`font-serif absolute cursor-pointer opacity-0 group-hover:opacity-100 text-center ease-in duration-[.3s] transition bottom-0 text-white  w-full font-light text-md lg:text-lg py-1 tracking-wider ${isClicked ? 'bg-green-600' : 'bg-green-800'}`}
         >
-          Add To Cart
+          {isClicked ? 'Added To Cart' : 'Add To Cart'}
         </button>
       </div>
       <div className='flex flex-col justify-start text-start mx-3'>
