@@ -1,4 +1,4 @@
-import React, { useEffect, useRef} from 'react'
+import React, { useEffect, useRef, useState} from 'react'
 import { careToolsData } from '../../constants/data'
 import { useParams } from 'react-router-dom'
 import Footer from '../footer/Footer'
@@ -9,30 +9,36 @@ import { Delivery } from '../../global'
  
 
 const ToolDetails = ({tools}) => {
-    const scrollRef = useRef()
-const {addToCart} = useCart()
-const { toolId } = useParams()
+  const scrollRef = useRef()
+  const { addToCart } = useCart()
+  const { toolId } = useParams()
+  const [selectedProduct, setSelectedProduct] = useState(null)
 
-useEffect(() => {
-  window.scrollTo(0, 0) 
-}, [])
+ useEffect(() => {
+   window.scrollTo(0, 0)
 
-const product = tools.find((item) => item.id === parseInt(toolId))
-  if (!product) {
-    return <div>Product not found.</div>
-   }
+   const product = tools.find((item) => item.id === parseInt(toolId))
+   setSelectedProduct(product)
+ }, [toolId, tools])
+
+ if (!selectedProduct) {
+   return <div>Product not found.</div>
+ }
 
  return (
    <>
-     <MainToolsSection 
-     product={product} 
-     
-     scrollRef={scrollRef}
-     addToCart={addToCart}
-      />
+     <MainToolsSection
+       product={selectedProduct}
+       scrollRef={scrollRef}
+       addToCart={addToCart}
+     />
 
      {/* also like */}
-    <SimilarTools products={careToolsData} selectedProductId={product.category} />
+     <SimilarTools
+       products={careToolsData}
+       selectedProduct={selectedProduct}
+       selectedProductId={selectedProduct.category}
+     />
      <Delivery />
      <Footer />
    </>
