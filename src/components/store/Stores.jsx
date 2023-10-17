@@ -21,7 +21,7 @@ const Store = () => {
   })
   const [searchQuery, setSearchQuery] = useState('')
   const [resetAnimation, setResetAnimation] = useState(false)
- const [sortingPlants, setSortingPlants] = useState('none')
+ const [sortingPlants, setSortingPlants] = useState('')
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -100,24 +100,22 @@ if (isLoading) {
               <BsSearch className='text-slate-500' />
             </div>
           </div>
-          <div className='pt-1 lg:hidden'>
-            <select
-              id='sortOrder'
-              value={sortingPlants}
-              onChange={(e) => sortingFunction(e.target.value)}
-              className='text-gray-600 text-md tracking-wide border border-gray-500 bg-transparent py-1 lg:px-2 cursor-pointer mb-4'
-            >
-              <option className='text-xs md:text-md' value='none'>
-                Sort By
-              </option>
-              <option className='text-xs md:text-md' value='asc'>
-                Price Low to High
-              </option>
-              <option className='text-xs md:text-md' value='desc'>
-                Price High to Low
-              </option>
-            </select>
-          </div>
+          <select
+            id='questionType'
+            value={sortingPlants}
+            onChange={(e) => sortingFunction(e.target.value)}
+            className='text-gray-600vpt-1 lg:hidden text-md tracking-wide border border-gray-500 bg-transparent py-1 px-1 cursor-pointer mb-4 mt-2'
+          >
+            <option className='text-xs md:text-md'>Sort By:</option>
+            <option className='text-xs md:text-md' value='asc'>
+              Price Low to High
+            </option>
+            <option className='text-xs md:text-md' value='desc'>
+              Price High to Low
+            </option>
+          </select>
+       
+
           <div className='flex flex-row w-full m-auto lg:m-0 lg:w-fit pb-4 lg:pb-6 justify-center items-center'>
             <h3 className='pr-0 lg:pr-2 text-2xl hidden lg:block font-semibold'>
               Categories
