@@ -99,22 +99,25 @@ if (isLoading) {
               />
               <BsSearch className='text-slate-500' />
             </div>
+          </div> 
+          <div className=''>
+            <label
+              htmlFor='sortOrder'
+              className='text-slate-600 text-md md:text-xl tracking-wide font-bold pr-2'
+            >
+              Sort by:
+            </label>
+            <select
+              id='questionType'
+              value={sortingPlants}
+              onChange={(e) => sortingFunction(e.target.value)}
+              className='text-slate-600 py-1 px-1 lg:hidden text-md border border-t-2 border-slate-500 bg-[#ecf5ec] cursor-pointer mb-4 mt-2 select-with-arrow'
+            >
+              <option>Select</option>
+              <option value='asc'>Price Low to High</option>
+              <option value='desc'>Price High to Low</option>
+            </select>
           </div>
-          <select
-            id='questionType'
-            value={sortingPlants}
-            onChange={(e) => sortingFunction(e.target.value)}
-            className='text-gray-600vpt-1 lg:hidden text-md tracking-wide border border-gray-500 bg-transparent py-1 px-1 cursor-pointer mb-4 mt-2'
-          >
-            <option className='text-xs md:text-md'>Sort By:</option>
-            <option className='text-xs md:text-md' value='asc'>
-              Price Low to High
-            </option>
-            <option className='text-xs md:text-md' value='desc'>
-              Price High to Low
-            </option>
-          </select>
-       
 
           <div className='flex flex-row w-full m-auto lg:m-0 lg:w-fit pb-4 lg:pb-6 justify-center items-center'>
             <h3 className='pr-0 lg:pr-2 text-2xl hidden lg:block font-semibold'>
