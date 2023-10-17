@@ -72,7 +72,7 @@ import black3_2 from './black3_2.webp'
 import black4 from './black4.jpg'
 import black4_1 from './black4_1.webp'
 import black4_2 from './black4_2.webp'
-import black5 from './black5.jpg'
+import black5 from './black5.webp'
 import black5_1 from './black5_1.webp'
 import black5_2 from './black5_2.webp'
 import black6 from './black6.jpg'
@@ -96,7 +96,9 @@ import black13_2 from './black13_2.webp'
 import blue1 from './blue1.webp'
 import blue1_1 from './blue1_1.webp'
 import blue1_2 from './blue1_2.webp'
-import blue2 from './blue2.jpg'
+import blue2 from './blue2.webp'
+import blue2_1 from './blue2_1.webp'
+import blue33 from './blue33.webp'
 import blue3 from './blue3.jpg'
 import blue3_1 from './blue3_1.webp'
 import blue3_2 from './blue3_2.webp'
@@ -327,6 +329,8 @@ export {
   black13_2,
   blue1,
   blue1_1,
+  blue2_1,
+  blue33,
   blue1_2,
   blue2,
   blue3,

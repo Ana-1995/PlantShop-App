@@ -2,7 +2,7 @@ import React from 'react'
 import { useRef, useEffect, useState } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import { CentralTitle, Plant } from '../../global'
-import { giftsProductsData } from '../../constants/data'
+import { plantsData } from '../../constants/data'
 import { Link } from 'react-router-dom'
 
 const GiftsSlider = () => {
@@ -13,6 +13,8 @@ const GiftsSlider = () => {
      // Reset animation
     setResetAnimation(true)
   }, [])
+
+const filteredGifts=plantsData.filter((plant)=>plant.position === 'new')
 
   const handleTouchStart = (e) => {
     setTouchStartX(e.touches[0].clientX)
@@ -33,9 +35,9 @@ const GiftsSlider = () => {
   const scroll = (direction) => {
     const { current } = scrollRef
     if (direction === 'left') {
-      current.scrollLeft -= 500
+      current.scrollLeft -= 300
     } else {
-      current.scrollLeft += 500
+      current.scrollLeft += 300
     }
   }
   return (
@@ -64,7 +66,7 @@ const GiftsSlider = () => {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
           >
-            {giftsProductsData.map((plant, i) => (
+            {filteredGifts.map((plant, i) => (
               <Plant
                 key={`${plant.id}-${i}`}
                 id={plant.id}
