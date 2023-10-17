@@ -105,7 +105,7 @@ if (isLoading) {
               id='sortOrder'
               value={sortingPlants}
               onChange={(e) => sortingFunction(e.target.value)}
-              className='text-gray-600 text-md tracking-wide border border-gray-500 bg-transparent py-1 px-1 cursor-pointer mb-4'
+              className='text-gray-600 text-md tracking-wide border border-gray-500 bg-transparent py-1 px-2 cursor-pointer mb-4'
             >
               <option className='text-xs md:text-md' value='none'>
                 Sort By
@@ -171,7 +171,7 @@ if (isLoading) {
           </div>
         </div>
         <div className='hidden lg:flex flex-row gap-4'>
-          <div className='lg:pl-2 pt-2 lg:pt-0'>
+          <div className='pl-2 pt-0'>
             <label
               htmlFor='sortOrder'
               className='text-gray-500 text-md tracking-wide font-bold pr-2'

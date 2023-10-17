@@ -90,7 +90,7 @@ const PlantsCare = () => {
           id='sortOrder'
           value={sortingTools}
           onChange={(e) => filterSorting(e.target.value)}
-          className='text-gray-600 text-md tracking-wide border border-gray-500 bg-transparent py-1 px-1 cursor-pointer mb-4'
+          className='text-gray-600 text-md tracking-wide border border-gray-500 bg-transparent py-1 px-2 cursor-pointer mb-4'
         >
           <option className='text-xs md:text-md' value='none'>
             Sort By
