@@ -10,85 +10,82 @@ import Footer from '../footer/Footer'
 import { useEffect } from 'react'
 
 const Store = () => {
-  //loader gif 
-  const [isLoading, setIsLoading] = useState(true)
+   const [isLoading, setIsLoading] = useState(true)
+   const [selectedFilters, setSelectedFilters] = useState({
+     color: null,
+     category: null,
+     potSize: null,
+     careLevel: null,
+   })
+   const [searchQuery, setSearchQuery] = useState('')
+   const [resetAnimation, setResetAnimation] = useState(false)
+   const [sortingPlants, setSortingPlants] = useState('')
 
-  const [selectedFilters, setSelectedFilters] = useState({
-    color: null,
-    category: null,
-    potSize: null,
-    careLevel: null,
-  })
-  const [searchQuery, setSearchQuery] = useState('')
-  const [resetAnimation, setResetAnimation] = useState(false)
- const [sortingPlants, setSortingPlants] = useState('')
+   useEffect(() => {
+     window.scrollTo(0, 0)
+     setTimeout(() => setIsLoading(false), 2000)
+     setTimeout(() => setResetAnimation(true), 2000)
+   }, [])
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-    setTimeout(() => setIsLoading(false), 2000)
-    setTimeout(() => setResetAnimation(true), 2000)
-  }, [])
+   const handleSearchInputChange = (e) => setSearchQuery(e.target.value)
 
-if (isLoading) {
-  return <Loader />
-}
-  const handleSearchInputChange = (e) => setSearchQuery(e.target.value)
+   const handleFilterChange = (filterName, value) => {
+     setSelectedFilters({ ...selectedFilters, [filterName]: value })
+   }
 
-  const handleFilterChange = (filterName, value) => {
-    setSelectedFilters({ ...selectedFilters, [filterName]: value })
-  }
+   const handleAllPlantsFilter = () => {
+     setSelectedFilters({
+       color: null,
+       category: null,
+       potSize: null,
+       careLevel: null,
+     })
+   }
 
-  const handleAllPlantsFilter = () => {
+   const sortingFunction = (order) => {
+     setSortingPlants(order)
+   }
 
-    setSelectedFilters({
-      color: null,
-      category: null,
-      potSize: null,
-      careLevel: null,
-    })
-  }
- const sortingFunction=(order)=>{
-  setSortingPlants(order)
- }
+   const filteredPlants = plantsData
+     .filter((plant) => {
+       const { color, category, potSize, careLevel } = selectedFilters
 
+       const matchesSearch =
+         !searchQuery ||
+         plant.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+         plant.category.toLowerCase().includes(searchQuery.toLowerCase())
 
-    const filteredPlants = plantsData
-      .filter((plant) => {
-        const { color, category, potSize, careLevel } = selectedFilters
+       const matchesColor = !color || plant.color === color
+       const matchesCategory = !category || plant.category === category
+       const matchesPotSize = !potSize || plant.potSize === potSize
+       const matchesCareLevel = !careLevel || plant.careLevel === careLevel
 
-        const matchesSearch =
-          !searchQuery ||
-          plant.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          plant.category.toLowerCase().includes(searchQuery.toLowerCase())
+       return (
+         matchesSearch &&
+         matchesColor &&
+         matchesCategory &&
+         matchesPotSize &&
+         matchesCareLevel
+       )
+     })
+     .sort((a, b) => {
+       if (sortingPlants === 'asc') {
+         return a.price - b.price
+       } else if (sortingPlants === 'desc') {
+         return b.price - a.price
+       }
+       return 0
+     })
 
-        const matchesColor = !color || plant.color === color
-        const matchesCategory = !category || plant.category === category
-        const matchesPotSize = !potSize || plant.potSize === potSize
-        const matchesCareLevel = !careLevel || plant.careLevel === careLevel
-
-        return (
-          matchesSearch &&
-          matchesColor &&
-          matchesCategory &&
-          matchesPotSize &&
-          matchesCareLevel
-        )
-      })
-      .sort((a, b) => {
-        if (sortingPlants === 'asc') {
-          return a.price - b.price
-        } else if (sortingPlants === 'desc') {
-          return b.price - a.price
-        }
-        return 0
-      })
-
+   if (isLoading) {
+     return <Loader />
+   }
   return (
     <>
       <CentralTitle title={'Our Store'} />
       <div className='flex flex-row w-[90%] m-auto justify-between 2xl:justify-between items-center'>
         <div className='flex flex-col justify-center lg:justify-start items-center m-auto lg:m-0'>
-          <div className='flex flex-row '>
+          <div className='flex flex-row mt-2 '>
             <div className='lg:hidden flex flex-row justify-between items-center px-2 py-1 border border-slate-400 mb-3 w-full'>
               <input
                 className='border-none outline-none text-slate-600 text-sm bg-transparent'
@@ -99,19 +96,16 @@ if (isLoading) {
               />
               <BsSearch className='text-slate-500' />
             </div>
-          </div> 
-          <div className=''>
-            <label
-              htmlFor='sortOrder'
-              className='text-slate-600 text-md md:text-xl tracking-wide font-bold pr-2'
-            >
+          </div>
+
+          <div className='flex justify-center lg:hidden items-center my-3'>
+            <label className='text-slate-600 text-md md:text-xl tracking-wide font-bold pr-2'>
               Sort by:
             </label>
             <select
-              id='questionType'
               value={sortingPlants}
               onChange={(e) => sortingFunction(e.target.value)}
-              className='text-slate-600 py-1 px-1 lg:hidden text-md border border-t-2 border-slate-500 bg-[#ecf5ec] cursor-pointer mb-4 mt-2 select-with-arrow'
+              className='text-slate-600 py-1 px-1 text-md border border-t-2 border-slate-500 bg-transparent cursor-pointer'
             >
               <option>Select</option>
               <option value='asc'>Price Low to High</option>
@@ -119,7 +113,7 @@ if (isLoading) {
             </select>
           </div>
 
-          <div className='flex flex-row w-full m-auto lg:m-0 lg:w-fit pb-4 lg:pb-6 justify-center items-center'>
+          <div className='flex flex-row w-full m-auto lg:mt-10 lg:w-fit pb-4 lg:pb-6 justify-center items-center'>
             <h3 className='pr-0 lg:pr-2 text-2xl hidden lg:block font-semibold'>
               Categories
             </h3>
@@ -173,14 +167,11 @@ if (isLoading) {
         </div>
         <div className='hidden lg:flex flex-row gap-4'>
           <div className='pl-2 pt-0'>
-            <label
-              htmlFor='sortOrder'
-              className='text-gray-500 text-md tracking-wide font-bold pr-2'
-            >
+            <label className='text-gray-500 text-md tracking-wide font-bold pr-2'>
               Sort by:
             </label>
             <select
-              id='sortOrder'
+              id='sortOrder2'
               value={sortingPlants}
               onChange={(e) => sortingFunction(e.target.value)}
               className='text-gray-600 text-md tracking-wide border border-gray-500 bg-transparent py-1 px-1 cursor-pointer'
