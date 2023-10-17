@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useCart } from './CartContext'
 import { Link } from 'react-router-dom'
 import { MdPlayArrow } from 'react-icons/md'
 
 const Cart = () => {
   const { cartItems, addToCart, removeFromCart, clearCart } = useCart()
+    const [resetAnimation, setResetAnimation] = useState(false)
 useEffect(()=>{
 window.scrollTo(0, 0)
+setResetAnimation(true)
 }, [])
   const getTotalPrice = () => {
     const total = cartItems.reduce((acc, item) => {
@@ -21,7 +23,7 @@ window.scrollTo(0, 0)
   }
 
   return (
-    <div className=' bg-gray-100 p-4'>
+    <div className='bg-gray-100 p-4'>
       <h2 className='text-3xl font-semibold mb-2 ml-4 text-center lg:text-start'>
         Your Cart
       </h2>
@@ -39,7 +41,7 @@ window.scrollTo(0, 0)
           </div>
         </div>
       ) : (
-        <div>
+        <div className={`${resetAnimation ? 'flip-in-hor-bottom' : 'hidden'}`}>
           {cartItems.map((item, i) => (
             <div
               key={`${item.id}-${i}`}
