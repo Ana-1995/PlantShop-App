@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useCart } from '../../global/cartContexts/CartContext'
 import { Link } from 'react-router-dom'
 
 const MainToolsSection = ({product}) => {
   const { addToCart } = useCart() 
-  return (
+    const [resetAnimation, setResetAnimation] = useState(false)
+      useEffect(() => {
+        setResetAnimation(true)
+      }, [])
+  return ( 
     <section className='m-auto w-[80%] lg:w-[95%] mb-10' key={product.id}>
-      <div className='flex flex-col lg:flex-row mt-4 lg:mt-12'>
+      <div className={`${resetAnimation ? 'scale-in-ver-top' : 'hidden'} flex flex-col lg:flex-row mt-4 lg:mt-12`}>
         <div className='justify-center lg:justify-start ml-0 lg:ml-4 flex mt-4 lg:mt-0 mb-0 '>
-          <img
+          <img 
             className='w-[95%] lg:w-[85%] object-cover'
             src={product.img}
             alt={product.title}
