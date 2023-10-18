@@ -41,7 +41,9 @@ import gray3 from './gray3.jpg'
 import gray3_1 from './gray3_1.webp'
 import gray3_2 from './gray3_2.webp'
 import gray4 from './gray4.jpg'
-import gray5 from './gray5.jpg'
+import gray5 from './gray5.webp'
+import gray33 from './gray33.webp'
+import gray331 from './gray331.webp'
 import gray6 from './gray6.webp'
 import gray6_1 from './gray6_1.webp'
 import gray6_2 from './gray6_2.webp'
@@ -109,7 +111,8 @@ import blue5 from './blue5.webp'
 import blue5_1 from './blue5_1.webp'
 import blue5_2 from './blue5_2.webp'
 import blue6 from './blue6.webp'
-import blue7 from './blue7.webp'
+import blue331 from './blue331.webp'
+import blue332 from './blue332.webp'
 import blue8 from './blue8.webp'
 import blue8_1 from './blue8_1.webp'
 import blue8_2 from './blue8_2.webp'
@@ -167,7 +170,6 @@ import indoorHome from './indoorHome.jpg'
 import outdoorHome from './outdoorHome.png'
 //gifts data
 import gift1 from './gift1.webp'
-import gift2 from './gift2.webp'
 import giftCover from './giftCover.jpg'
 import giftCover2 from './giftCover2.jpg'
 import giftCover3 from './giftCover3.jpg'
@@ -203,7 +205,6 @@ export {
   plantGuide,
   innerCover,
   gift1,
-  gift2,
   pot1,
   pot2,
   pot3,
@@ -276,6 +277,8 @@ export {
   gray3_2,
   gray4,
   gray5,
+  gray33,
+  gray331,
   gray6,
   gray6_1,
   gray6_2,
@@ -343,7 +346,8 @@ export {
   blue5_1,
   blue5_2,
   blue6,
-  blue7,
+  blue331,
+  blue332,
   blue8,
   blue8_1,
   blue8_2,
