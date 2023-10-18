@@ -112,7 +112,7 @@ const PetFriendly = () => {
        </div>
      </div>
 
-     <section className='w-[95%] lg:w-[98%] xl:w-[90%] m-auto flex flex-row mt-8'>
+     <section className='w-[95%] lg:w-[98%] xl:w-[90%] m-auto flex flex-row mt-8 mb-10'>
        <div className='flex flex-row'>
          <div className='hidden lg:flex flex-col mr-6 justify-start items-start'>
            <h3 className='font-bold pb-1 text-xl'>Pot Color</h3>
