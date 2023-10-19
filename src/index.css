@@ -34,18 +34,18 @@ background: #ecf4ec;
   display: none;
 }
 #mainNav{
-    display: none;
+display: none;
 }
 
 @media (min-width: 821px){
     .headroom{
-        display: block;
+     display: block;
     }
      #mainNav{
     display: block;
 }
  .mob__nav{
-        display: none;
+  display: none;
     }
 }
 

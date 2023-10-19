@@ -37,7 +37,7 @@ const MobileNav = () => {
              
               <BsCart />
               {totalQuantity > 0 && (
-                <span className=' absolute bottom-2 left-2 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-sans'>
+                <span className='absolute bottom-2 left-2 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-sans'>
                   {totalQuantity}
                 </span>
               )}

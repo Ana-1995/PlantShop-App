@@ -238,7 +238,7 @@ export const plantsData = [
     id: 5,
     img: blue6,
     photos: [blue6, blue331, blue332],
-    title: 'Bromeliad Pineapple',
+    title: 'LIttle Pineapple',
     stars: 51,
     position: 'new',
     price: 79.0,

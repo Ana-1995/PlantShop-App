@@ -51,7 +51,7 @@ const MainNav = () => {
         </Link>
       </div>
 
-      <nav className='justify-center items-center text-1xl tracking-wider hidden md:flex lg:flex flex-1 gap-2'>
+      <nav className='justify-center items-center text-1xl tracking-wider flex lg:flex flex-1 gap-2'>
         <NavLink
           to={'/'}
           className={({ isActive }) => (isActive ? activeLink : normalLink)}
@@ -69,7 +69,7 @@ const MainNav = () => {
             className={({ isActive }) => (isActive ? activeLink2 : normalLink)}
           >
             <span className='flex flex-row justify-center items-center lg:pl-2 lg:pr-2'>
-              Plants <MdKeyboardArrowDown className='hidden lg:block' />
+              Plants <MdKeyboardArrowDown className='' />
             </span>
           </NavLink>
           {dropdown && <Dropdown />}
@@ -104,7 +104,7 @@ const MainNav = () => {
         </NavLink>
       </nav>
 
-      <div className='hidden md:flex justify-end items-center text-1xl'>
+      <div className='flex justify-end items-center text-1xl'>
         <Link
           className='my-0 mx-1 ease-in duration-300 hover:text-[#000]'
           to={'/login'}

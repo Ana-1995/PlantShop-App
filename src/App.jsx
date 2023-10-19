@@ -2,19 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Headroom from 'react-headroom'
 import { Banner, Cart, CookieBanner, Login, PlantDetails, SignUp} from './global'
-import {
-  Contact,
-  Gifts,
-  Home,
-  Indoor,
-  MainNav,
-  MobileNav,
-  Outdoor,
-  PetFriendly,
-  PlantsCare,
-  Stores,
-  Workshops,
-} from './components'
+import { Contact, Gifts, Home, Indoor, MainNav, MobileNav, Outdoor, PetFriendly, PlantsCare, Stores, Workshops} from './components'
 import { careToolsData, plantsData } from './constants/data'
 import ToolDetails from './components/care/ToolDetails'
 import PlantGuide from './components/care/PlantGuide'
@@ -39,8 +27,7 @@ const App = () => {
               transition: 'all .5s ease-in-out',
             }}
           >
-            <MainNav />
-            
+            <MainNav />           
           </Headroom>
           <MobileNav />
 

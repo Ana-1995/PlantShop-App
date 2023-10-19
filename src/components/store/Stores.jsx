@@ -142,7 +142,7 @@ const Store = () => {
             ))}
           </div>
           <div className='flex flex-row gap-x-2 lg:hidden'>
-            {['White', 'Black', 'Gray', 'Blue'].map((color) => (
+            {['Black', 'White', 'Gray', 'Blue'].map((color) => (
               <div className='flex flex-row items-center' key={color}>
                 <div
                   style={{
