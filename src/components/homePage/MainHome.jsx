@@ -41,7 +41,7 @@ const MainHome = () => {
             Turn Your Space Green
           </h1>
           <p className='text-center text-slate-300 font-bold lg:font-semibold pt-3 lg:pt-4 text-sm md:text-lg lg:text-base tracking-normal lg:tracking-wide w-[60%] md:w-full m-auto md:m-0'>
-            Discover the best plants for your space, and we will deliver them to
+            Discover the best plants for your space and we will deliver them to
             your door.
           </p>
           <button
