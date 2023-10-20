@@ -78,6 +78,7 @@ window.scrollTo(0, 0)
               </div>
             </div>
           ))}
+          <div className="ml-4">
           <div className='mt-2 flex flex-row gap-3'>
             <p className='mt-2 text-xl font-bold'>Total: ${getTotalPrice()}</p>
             <button
@@ -95,6 +96,7 @@ window.scrollTo(0, 0)
             >
               Check Out
             </Link>
+          </div>
           </div>
         </div>
       )}
