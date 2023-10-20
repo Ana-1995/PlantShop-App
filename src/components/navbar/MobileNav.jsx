@@ -8,8 +8,11 @@ import { useCart } from '../../global/cartContexts/CartContext'
 
 const MobileNav = () => {
   const [toggle, setToggle] = useState(false)
- const { cartItems } = useCart()
-
+  const { cartItems, isOpen, setIsOpen } = useCart()
+  // Handle cart icon click
+  const handleCartIconClick = () => {
+    setIsOpen(!isOpen)
+  }
   const totalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
     0
@@ -33,15 +36,14 @@ const MobileNav = () => {
             <AiOutlineUser size={25} />
           </Link>
           <div className='flex items-center relative'>
-            <Link to={'/cart'}>
-             
+            <button onClick={handleCartIconClick}>
               <BsCart />
               {totalQuantity > 0 && (
                 <span className='absolute bottom-2 left-2 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-sans'>
                   {totalQuantity}
                 </span>
               )}
-            </Link>
+            </button>
           </div>
         </div>
         <AiOutlineMenu

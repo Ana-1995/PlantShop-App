@@ -10,31 +10,35 @@ import { useCart } from '../../global/cartContexts/CartContext'
 
  
 const MainNav = () => {
-    const { cartItems } = useCart()
+  const { cartItems, isOpen, setIsOpen } = useCart()
   const activeLink = 'text-black bg-green-300 rounded-full '
-    const activeLink2 =
-      'text-black bg-green-300 rounded-full px-1'
+  const activeLink2 = 'text-black bg-green-300 rounded-full px-1'
   const normalLink = ''
 
   //dropdown states
   const [dropdown, setDropdown] = useState(false)
 
   //on mouse events for dropdown nav menu
-  const onMouseEnter=()=>{
-    if(window.innerWidth < 960){
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
       setDropdown(false)
-    }else{
+    } else {
       setDropdown(true)
     }
   }
 
-  const onMouseLeave=()=>{
-    if(window.innerWidth < 960){
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
       setDropdown(false)
-    } else{
+    } else {
       setDropdown(false)
     }
   }
+  // Handle cart icon click
+  const handleCartIconClick = () => {
+    setIsOpen(!isOpen) 
+  }
+
   const totalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
     0
@@ -111,18 +115,14 @@ const MainNav = () => {
         >
           <AiOutlineUser size={25} />
         </Link>
-        <Link
-          className='my-0 mx-[0.3rem] ease-in duration-300 hover:text-[#000] relative'
-          to={'/cart'}
-        >
-          
+        <button onClick={handleCartIconClick} className='my-0 mx-[0.3rem] ease-in duration-300 hover:text-[#000] relative'>
           <BsCart size={22} />
           {totalQuantity > 0 && (
             <span className='absolute bottom-3 left-2 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-sans'>
               {totalQuantity}
             </span>
           )}
-        </Link>
+        </button>
       </div>
     </div>
   )

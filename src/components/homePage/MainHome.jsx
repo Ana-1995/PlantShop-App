@@ -14,7 +14,7 @@ const MainHome = () => {
   const isMobile = window.innerWidth < 768
   const initialAnimationProps = isMobile
     ? { opacity: 0, y: 20 }
-    : { opacity: 0, y: 200 }
+    : { opacity: 0, y: 100 }
 
   return (
     <section id='mainHome' className='w-full h-full relative lg:static'>

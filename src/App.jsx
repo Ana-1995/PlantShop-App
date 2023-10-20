@@ -27,7 +27,7 @@ const App = () => {
               transition: 'all .5s ease-in-out',
             }}
           >
-            <MainNav />           
+            <MainNav />
           </Headroom>
           <MobileNav />
 
@@ -53,12 +53,11 @@ const App = () => {
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<SignUp />} />
             <Route path='/plantguide' element={<PlantGuide />} />
-            <Route path='/cart' element={<Cart />} />
-
             <Route path='*' element={<h1>Page Not Found</h1>} />
           </Routes>
 
           {!hasSeenCookieBanner && <CookieBanner />}
+        <Cart />
         </Router>
       </div>
     </CartProvider>
