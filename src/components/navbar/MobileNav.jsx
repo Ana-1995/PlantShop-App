@@ -37,7 +37,7 @@ const MobileNav = () => {
           </Link>
           <div className='flex items-center relative'>
             <button onClick={handleCartIconClick}>
-              <BsCart />
+              <BsCart size={21} />
               {totalQuantity > 0 && (
                 <span className='absolute bottom-2 left-2 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-sans'>
                   {totalQuantity}

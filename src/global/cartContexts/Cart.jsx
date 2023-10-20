@@ -7,10 +7,8 @@ import sadFace from  '../../assets/sadFace.png'
 
 const Cart = () => {
   const {isOpen, handleClose, cartItems, addToCart, removeFromCart, removeWholeProduct, clearCart } = useCart()
-    const [resetAnimation, setResetAnimation] = useState(false)
 useEffect(()=>{
 window.scrollTo(0, 0)
-setResetAnimation(true)
 }, [])
   const getTotalPrice = () => {
     const total = cartItems.reduce((acc, item) => {
@@ -36,7 +34,7 @@ setResetAnimation(true)
           <img src={sadFace} alt="" />   
         </div>
       ) : (
-        <div className={`${resetAnimation ? 'flip-in-hor-bottom' : 'hidden'}`}>
+        <div>
           {cartItems.map((item, i) => (
             <div
               key={`${item.id}-${i}`}
