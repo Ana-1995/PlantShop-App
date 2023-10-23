@@ -49,7 +49,7 @@ const Dropdown = () => {
           <img
             src={innerCover}
             className='w-full h-full object-cover rounded-md'
-            alt=''
+            alt='plants'
           />
         </div>
       </ul>

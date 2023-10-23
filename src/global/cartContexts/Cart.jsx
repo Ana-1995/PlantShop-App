@@ -31,7 +31,7 @@ window.scrollTo(0, 0)
       {cartItems.length === 0 ? (
         <div className='my-6 flex flex-col items-center'>
           <p className='text-bold tracking-wide'>Your Cart Is Empty</p>
-          <img src={sadFace} alt="" />   
+          <img src={sadFace} alt="sad plant" />   
         </div>
       ) : (
         <div>

@@ -27,7 +27,7 @@ const Plant = ({id, img, title, price, ExPrice, stars }) => {
       <div className='overflow-hidden mx-3 m-auto rounded-t-md rounded-b-md group relative mt-3 h-auto md:h-44 lg:h-60'>
         <img
           src={img}
-          alt='gallery_image'
+          alt='plant'
           className='w-full relative h-full cursor-pointer object-cover transition ease-out duration-[.3s] hover:scale-[1.1]  '
         />
 
